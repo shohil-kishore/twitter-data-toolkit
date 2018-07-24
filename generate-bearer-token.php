@@ -1,7 +1,7 @@
 <?php
 // This code has been adapted from here: https://gist.github.com/lgladdy/5141615
 // Code implements steps from here: https://developer.twitter.com/en/docs/basics/authentication/overview/application-only.html
-// If you've never used PHP before, you should download something like XAMPP (https://www.apachefriends.org/index.html) as you'll need to start a webserver to run the code. 
+// If you've never used PHP before, you should download something like XAMPP (https://www.apachefriends.org/index.html) as you'll need to start a web server to run the code. 
 
 // This is all you need to configure.
 $consumer_key = '';
