@@ -1,2 +1,2 @@
-# wun-twitter-data
-Twitter data collection using application-only authentication (bearer token) and Twitter's premium search endpoints.
+# Twitter Data Collector
+Python/JavaScript files that assist users in identifying their bearer token (application-only authentication), collecting Tweets using Twitter's premium search endpoints and aggregating Tweets into one file.
