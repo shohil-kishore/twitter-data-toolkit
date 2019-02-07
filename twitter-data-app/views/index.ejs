@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <title>Bearer Token Generator</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Bearer Token Generator</h1>
+
+      <form action="/generator" method="POST">
+        <input type="text" name="public" placeholder="Consumer Key" />
+        <input type="text" name="secret" placeholder="Consumer Secret Key" />
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

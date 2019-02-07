@@ -1,0 +1,9 @@
+{
+  "docType": "<!DOCTYPE html>",
+  "defaultKeysToFilter": ["settings", "enrouten", "_locals"],
+  "client": {
+    "markupId": "react-engine-props"
+  },
+  "staticMarkup": false,
+  "scriptType": "application/json"
+}
