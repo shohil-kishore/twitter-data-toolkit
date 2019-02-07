@@ -15,16 +15,15 @@
     <div class="container">
       <h1>Bearer Token Generator</h1>
 
-      <form action="/generator" method="POST">
+      <form action="/generate-token" method="GET">
         <input type="text" name="public" placeholder="Consumer Key" />
         <input type="text" name="secret" placeholder="Consumer Secret Key" />
-        <button
+        <input
           class="btn waves-effect waves-light"
           type="submit"
           name="submit"
-        >
-          Submit
-        </button>
+          value="Submit"
+        />
       </form>
     </div>
   </body>
