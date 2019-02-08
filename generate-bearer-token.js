@@ -7,7 +7,10 @@ More information can be found here: https://developer.twitter.com/en/docs/basics
 */
 
 // Replace each string with the relevant key. Enclose each key in quotation marks as below.
-generateBearerToken("CONSUMER_KEY", "CONSUMER_SECRET_KEY");
+generateBearerToken(
+  "xItB7xPdjDr7z8NtXWnhMNl2S",
+  "Bdqf0VANLYDmbbFN9L5iyeHO5in7BvSmkVYU2VXUONfCbOAUBB"
+);
 
 function generateBearerToken(consumerKey, consumerSecretKey) {
   var request = require("request");
@@ -20,6 +23,8 @@ function generateBearerToken(consumerKey, consumerSecretKey) {
   var ENCODED_KEY = new Buffer(
     CONSUMER_KEY + ":" + CONSUMER_SECRET_KEY
   ).toString("base64");
+
+  console.log(ENCODED_KEY);
 
   // Configure request.
   var options = {
