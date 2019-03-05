@@ -8,5 +8,8 @@ This respository consists of Python/JavaScript files that allow users to identif
 - twitter-merger (working script): Aggregates all Tweets in a directory into one JSON file ready for analysis. 
 
 # FAQ
-## Why should I use this endpoint? 
+## Why should I use the Twitter API?
 Utilizing Twitter's Premium Search API is particularly useful in a research context as it allows you to collect full-fidelity data that can be replicated by others. 
+
+## How much does it cost to use the Twitter API?
+For $99 USD, 100,000 Tweets can be collected using the Premium Search full-archive endpoint. 
