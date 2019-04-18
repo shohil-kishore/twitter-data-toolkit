@@ -1,6 +1,8 @@
 # Twitter Data Collector
 This respository consists of Python/JavaScript files that allow users to identify their bearer token (application-only authentication), collect Tweets using Twitter's premium search endpoints and aggregate Tweets into one file for analysis purposes WITHOUT having to interact with code. Everything's done through a simple web application.
 
+![Screenshot](https://raw.githubusercontent.com/shohil-kishore/twitter-data-collector/master/Other/Data%20Toolkit%20Example.png)
+
 ## File Structure
 - twitter-data-app (work in progress): Allows users to input their consumer key and consumer private key to generate their bearer token.
 - twitter-count (working script): Generates an estimate of total Tweets to be collected based on a user query.
