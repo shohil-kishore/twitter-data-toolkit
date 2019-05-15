@@ -1,0 +1,55 @@
+<% include ./partials/header.ejs %>
+
+  <body>
+    <div class="container">
+
+      <div style="padding: 40px;" class="display-4 text-center">
+        Data Collector
+      </div>
+
+      <form action="/collect" method="POST">
+        <div class="form-group">
+          <label for="publicKey">Token</label>
+          <input type="text" class="form-control" name="token" />
+          <small id="publicKeyHelp" class="form-text text-muted">Copy and paste the bearer token generated on the Token page.</small>
+        </div>
+        <div class="form-group">
+          <label for="publicKey">Start Date</label>
+          <input type="text" class="form-control" name="start" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter year, month, day, hour and minute sequentially. For example, "201807210000" is 12am on the 21st of July, 2018. </small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Finish Date</label>
+          <input type="text" class="form-control" name="finish" />
+          <small id="publicKeyHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Endpoint</label>
+          <input type="text" class="form-control" name="endpoint" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter the name of your development environment. For example, "Dev.json".</small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Max Tweets</label>
+          <input type="text" class="form-control" name="maxTweets" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter the total amount of Tweets to be returned per request. When using the Premium Search endpoint, each request returns 500 Tweets at maximum. </small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Max Requests</label>
+          <input type="text" class="form-control" name="maxRequests" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter the maximum amount of requests to be made. Use this as a backup to limit how many requests are made. </small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Query</label>
+          <input type="text" class="form-control" name="query" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter a query utilising the appropriate operators. For example, "#fashion, #trends". </small>
+        </div>
+        <input
+          class="btn btn-primary"
+          type="submit"
+          name="submit"
+          value="Submit"
+        />      
+      </form>
+    </div>
+  </body>
+</html>

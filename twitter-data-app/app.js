@@ -6,18 +6,25 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Global variable.
+// Global variables.
 var bearerToken;
+var token;
+var start;
+var finish;
+var endpoint;
+var maxTweets;
+var maxRequests;
+var query;
 
 // Get index which allows public/private input.
-app.get("/", (req, res) => {
-  res.render("index.ejs", {
+app.get("/generate", (req, res) => {
+  res.render("generate", {
     bearerToken: bearerToken
   });
 });
 
 // Identify public/private key.
-app.post("/generate-token", async (req, res) => {
+app.post("/generate", (req, res) => {
   var secretKey = req.body.secretKey;
   var publicKey = req.body.publicKey;
 
@@ -60,8 +67,91 @@ app.post("/generate-token", async (req, res) => {
   }
   // Redirect to refreshed page.
   setTimeout(() => {
-    res.redirect("/");
+    res.redirect("/generate");
   }, 1000);
+});
+
+app.get("/collect", (req, res) => {
+  res.render("collect", {
+    token: token,
+    start: start,
+    finish: finish,
+    endpoint: endpoint,
+    maxRequests: maxRequests,
+    maxTweets: maxTweets,
+    query: query
+  });
+});
+
+app.post("/collect", (req, res) => {
+  token = req.body.token;
+  start = req.body.start;
+  finish = req.body.finish;
+  endpoint = req.body.endpoint;
+  maxTweets = req.body.maxTweets;
+  maxRequests = req.body.maxRequests;
+  query = req.body.query;
+
+  twitterSearch(token, start, finish, endpoint, maxTweets, maxRequests, query);
+
+  function twitterSearch(
+    token,
+    start,
+    finish,
+    endpoint,
+    maxTweets,
+    maxRequests,
+    query
+  ) {
+    const request = require("request");
+
+    // Question mark allows query below.
+    const url = endpoint + "?";
+    const completedQuery = "(" + query + ")";
+    const bearerToken = "Bearer " + token;
+    var counter = 0;
+    while (counter < maxRequests) {
+      if (counter === 0) {
+        var queryObject = {
+          query: completedQuery,
+          maxResults: maxTweets,
+          fromDate: start,
+          toDate: finish
+        };
+      } else {
+        var queryObject = {
+          query: completedQuery,
+          maxResults: maxTweets,
+          fromDate: start,
+          toDate: finish,
+          next: nextToken
+        };
+      }
+      // Structure request (JSON content).
+      request(
+        {
+          url: url,
+          qs: queryObject,
+          headers: {
+            Authorization: bearerToken,
+            "Content-Type": "application/json"
+          }
+        },
+        (err, res, body) => {
+          if (err) {
+            console.log("error:", err);
+          } else if (res && body) {
+            console.log("statusCode:", res && res.statusCode);
+          }
+        }
+      );
+    }
+  }
+
+  // Should be a promise.
+  setTimeout(() => {
+    res.redirect("/collect");
+  }, 10000);
 });
 
 app.listen(8080, () => {

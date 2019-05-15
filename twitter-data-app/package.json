@@ -12,6 +12,7 @@
     "babel-cli": "^6.26.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "fs": "0.0.1-security",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
   }
