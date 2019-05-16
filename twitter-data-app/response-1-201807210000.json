@@ -1,0 +1,1709 @@
+{
+  "results": [
+    {
+      "created_at": "Mon Jul 23 23:59:40 +0000 2018",
+      "id": 1021545414737023000,
+      "id_str": "1021545414737022977",
+      "text": "Chicken Man please follow us down to the ⁦@HOBSanDiego⁩ tonight! 8p #houseofblues #SanDiego @thecadillac3⁩ and ⁦… https://t.co/yTE8w8TfAZ",
+      "display_text_range": [0, 140],
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "truncated": true,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 19687928,
+        "id_str": "19687928",
+        "name": "joie calio",
+        "screen_name": "joiecalio",
+        "location": "Seattle",
+        "url": "http://www.joiecalio.com",
+        "description": "Guitar/vocals for 7Horse - Vocals/bass for dada",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 710,
+        "friends_count": 56,
+        "listed_count": 34,
+        "favourites_count": 915,
+        "statuses_count": 2168,
+        "created_at": "Thu Jan 29 00:58:40 +0000 2009",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "12091A",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme10/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme10/bg.gif",
+        "profile_background_tile": true,
+        "profile_link_color": "A73939",
+        "profile_sidebar_border_color": "150E25",
+        "profile_sidebar_fill_color": "D8644F",
+        "profile_text_color": "280840",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/658486212672405507/f5kwY_2y_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/658486212672405507/f5kwY_2y_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/19687928/1445830321",
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "extended_tweet": {
+        "full_text": "Chicken Man please follow us down to the ⁦@HOBSanDiego⁩ tonight! 8p #houseofblues #SanDiego @thecadillac3⁩ and ⁦@7Horse_⁩  will eat more #chicken any man ever seen #HowlinWolf #backdoorman #rocknroll https://t.co/IeaWVRMdtw",
+        "display_text_range": [0, 199],
+        "entities": {
+          "hashtags": [
+            { "text": "houseofblues", "indices": [68, 81] },
+            { "text": "SanDiego", "indices": [82, 91] },
+            { "text": "chicken", "indices": [137, 145] },
+            { "text": "HowlinWolf", "indices": [164, 175] },
+            { "text": "backdoorman", "indices": [176, 188] },
+            { "text": "rocknroll", "indices": [189, 199] }
+          ],
+          "urls": [],
+          "user_mentions": [
+            {
+              "screen_name": "HOBSanDiego",
+              "name": "House of Blues San Diego",
+              "id": 65152219,
+              "id_str": "65152219",
+              "indices": [42, 54]
+            },
+            {
+              "screen_name": "thecadillac3",
+              "name": "The Cadillac Three",
+              "id": 1143447558,
+              "id_str": "1143447558",
+              "indices": [92, 105]
+            },
+            {
+              "screen_name": "7Horse_",
+              "name": "7Horse",
+              "id": 405897878,
+              "id_str": "405897878",
+              "indices": [112, 120]
+            }
+          ],
+          "symbols": [],
+          "media": [
+            {
+              "id": 1021545413420011500,
+              "id_str": "1021545413420011525",
+              "indices": [200, 223],
+              "media_url": "http://pbs.twimg.com/media/Di1CJCDUUAUmfDC.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/Di1CJCDUUAUmfDC.jpg",
+              "url": "https://t.co/IeaWVRMdtw",
+              "display_url": "pic.twitter.com/IeaWVRMdtw",
+              "expanded_url": "https://twitter.com/joiecalio/status/1021545414737022977/photo/1",
+              "type": "photo",
+              "sizes": {
+                "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                "large": { "w": 1242, "h": 1224, "resize": "fit" },
+                "small": { "w": 680, "h": 670, "resize": "fit" },
+                "medium": { "w": 1200, "h": 1183, "resize": "fit" }
+              }
+            }
+          ]
+        },
+        "extended_entities": {
+          "media": [
+            {
+              "id": 1021545413420011500,
+              "id_str": "1021545413420011525",
+              "indices": [200, 223],
+              "media_url": "http://pbs.twimg.com/media/Di1CJCDUUAUmfDC.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/Di1CJCDUUAUmfDC.jpg",
+              "url": "https://t.co/IeaWVRMdtw",
+              "display_url": "pic.twitter.com/IeaWVRMdtw",
+              "expanded_url": "https://twitter.com/joiecalio/status/1021545414737022977/photo/1",
+              "type": "photo",
+              "sizes": {
+                "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                "large": { "w": 1242, "h": 1224, "resize": "fit" },
+                "small": { "w": 680, "h": 670, "resize": "fit" },
+                "medium": { "w": 1200, "h": 1183, "resize": "fit" }
+              }
+            }
+          ]
+        }
+      },
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 1,
+      "favorite_count": 6,
+      "entities": {
+        "hashtags": [
+          { "text": "houseofblues", "indices": [68, 81] },
+          { "text": "SanDiego", "indices": [82, 91] }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/yTE8w8TfAZ",
+            "expanded_url": "https://twitter.com/i/web/status/1021545414737022977",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [114, 137]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "HOBSanDiego",
+            "name": "House of Blues San Diego",
+            "id": 65152219,
+            "id_str": "65152219",
+            "indices": [42, 54]
+          },
+          {
+            "screen_name": "thecadillac3",
+            "name": "The Cadillac Three",
+            "id": 1143447558,
+            "id_str": "1143447558",
+            "indices": [92, 105]
+          }
+        ],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:56:32 +0000 2018",
+      "id": 1021544624089780200,
+      "id_str": "1021544624089780224",
+      "text": "#Chicken Coops for Preppers #brand #social  @MyArtSubmit @Netdatabiz",
+      "source": "<a href=\"http://ignatz.netdatabiz.com/\" rel=\"nofollow\">Ignatz</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 372115803,
+        "id_str": "372115803",
+        "name": "Mouse Ignatz",
+        "screen_name": "mouseignatz",
+        "location": "Canada",
+        "url": "http://ignatz.netdatabiz.com",
+        "description": "Trials and tribulations with Krazy Kat. Lighter side of life. #social @twitter. Managed by @netdatabiz\n#SEOScore",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 3772,
+        "friends_count": 3799,
+        "listed_count": 329,
+        "favourites_count": 121,
+        "statuses_count": 95026,
+        "created_at": "Mon Sep 12 04:57:46 +0000 2011",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C28D42",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_link_color": "275869",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "C28D42",
+        "profile_text_color": "451545",
+        "profile_use_background_image": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/3020655675/98cd4c918da71a4c45fd7e62401b40c4_normal.png",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/3020655675/98cd4c918da71a4c45fd7e62401b40c4_normal.png",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/372115803/1356293561",
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          { "text": "Chicken", "indices": [0, 8] },
+          { "text": "brand", "indices": [28, 34] },
+          { "text": "social", "indices": [35, 42] }
+        ],
+        "urls": [],
+        "user_mentions": [
+          {
+            "screen_name": "Myartsubmit",
+            "name": "Myartsubmit.com",
+            "id": 28635514,
+            "id_str": "28635514",
+            "indices": [44, 56]
+          },
+          {
+            "screen_name": "netdatabiz",
+            "name": "netdatabiz",
+            "id": 230632774,
+            "id_str": "230632774",
+            "indices": [57, 68]
+          }
+        ],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:56:27 +0000 2018",
+      "id": 1021544601419767800,
+      "id_str": "1021544601419767822",
+      "text": "RT @AZgrabaplate: Grilled Chicken with Cherry-Chile Sauce is the perfect barbecue/party/picnic/take-your-pick dish for summer fun! https://…",
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 972225885867774000,
+        "id_str": "972225885867773954",
+        "name": "Bill's Food Favs",
+        "screen_name": "billsfoodblog",
+        "location": "Turnersville, NJ",
+        "url": null,
+        "description": "Sharing the best recipes on twitter #foodie #food #recipes #foodblogger #cuisine #cooking #cook #dinner",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 575,
+        "friends_count": 2033,
+        "listed_count": 4,
+        "favourites_count": 76,
+        "statuses_count": 6168,
+        "created_at": "Fri Mar 09 21:41:29 +0000 2018",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "F5F8FA",
+        "profile_background_image_url": "",
+        "profile_background_image_url_https": "",
+        "profile_background_tile": false,
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/972548826597818368/bcsbFIut_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/972548826597818368/bcsbFIut_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/972225885867773954/1520632116",
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Wed Jul 18 14:55:54 +0000 2018",
+        "id": 1019596630935441400,
+        "id_str": "1019596630935441408",
+        "text": "Grilled Chicken with Cherry-Chile Sauce is the perfect barbecue/party/picnic/take-your-pick dish for summer fun!… https://t.co/KaYiGpAn5Q",
+        "display_text_range": [0, 140],
+        "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+        "truncated": true,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 17323021,
+          "id_str": "17323021",
+          "name": "Patricia Conte",
+          "screen_name": "AZgrabaplate",
+          "location": "Phoenix area",
+          "url": "http://www.azgrabaplate.com",
+          "description": "I'm a freelance writer, photographer & food blogger for my site, Grab a Plate. Lifelong Cleveland Cavaliers fan!",
+          "translator_type": "none",
+          "protected": false,
+          "verified": false,
+          "followers_count": 2277,
+          "friends_count": 1822,
+          "listed_count": 187,
+          "favourites_count": 8238,
+          "statuses_count": 10706,
+          "created_at": "Tue Nov 11 21:40:26 +0000 2008",
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": true,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "F1F2D7",
+          "profile_background_image_url": "http://abs.twimg.com/images/themes/theme12/bg.gif",
+          "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme12/bg.gif",
+          "profile_background_tile": true,
+          "profile_link_color": "3F8A7A",
+          "profile_sidebar_border_color": "BFBFBF",
+          "profile_sidebar_fill_color": "DDEBE8",
+          "profile_text_color": "121314",
+          "profile_use_background_image": true,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/741774083935723522/2y3B3QIu_normal.jpg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/741774083935723522/2y3B3QIu_normal.jpg",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/17323021/1361468963",
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": null,
+          "follow_request_sent": null,
+          "notifications": null
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "extended_tweet": {
+          "full_text": "Grilled Chicken with Cherry-Chile Sauce is the perfect barbecue/party/picnic/take-your-pick dish for summer fun! https://t.co/NP2FlioTDS #chicken #grilling #bbq #barbecue #bbqsauce https://t.co/rxlymiPF5t",
+          "display_text_range": [0, 180],
+          "entities": {
+            "hashtags": [
+              { "text": "chicken", "indices": [137, 145] },
+              { "text": "grilling", "indices": [146, 155] },
+              { "text": "bbq", "indices": [156, 160] },
+              { "text": "barbecue", "indices": [161, 170] },
+              { "text": "bbqsauce", "indices": [171, 180] }
+            ],
+            "urls": [
+              {
+                "url": "https://t.co/NP2FlioTDS",
+                "expanded_url": "https://www.azgrabaplate.com/grilled-chicken-cherry-chile-sauce/",
+                "display_url": "azgrabaplate.com/grilled-chicke…",
+                "indices": [113, 136]
+              }
+            ],
+            "user_mentions": [],
+            "symbols": [],
+            "media": [
+              {
+                "id": 1019596616628686800,
+                "id_str": "1019596616628686848",
+                "indices": [181, 204],
+                "media_url": "http://pbs.twimg.com/media/DiZVuIRX0AA2n03.jpg",
+                "media_url_https": "https://pbs.twimg.com/media/DiZVuIRX0AA2n03.jpg",
+                "url": "https://t.co/rxlymiPF5t",
+                "display_url": "pic.twitter.com/rxlymiPF5t",
+                "expanded_url": "https://twitter.com/AZgrabaplate/status/1019596630935441408/photo/1",
+                "type": "photo",
+                "sizes": {
+                  "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                  "large": { "w": 680, "h": 1001, "resize": "fit" },
+                  "medium": { "w": 680, "h": 1001, "resize": "fit" },
+                  "small": { "w": 462, "h": 680, "resize": "fit" }
+                }
+              }
+            ]
+          },
+          "extended_entities": {
+            "media": [
+              {
+                "id": 1019596616628686800,
+                "id_str": "1019596616628686848",
+                "indices": [181, 204],
+                "media_url": "http://pbs.twimg.com/media/DiZVuIRX0AA2n03.jpg",
+                "media_url_https": "https://pbs.twimg.com/media/DiZVuIRX0AA2n03.jpg",
+                "url": "https://t.co/rxlymiPF5t",
+                "display_url": "pic.twitter.com/rxlymiPF5t",
+                "expanded_url": "https://twitter.com/AZgrabaplate/status/1019596630935441408/photo/1",
+                "type": "photo",
+                "sizes": {
+                  "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                  "large": { "w": 680, "h": 1001, "resize": "fit" },
+                  "medium": { "w": 680, "h": 1001, "resize": "fit" },
+                  "small": { "w": 462, "h": 680, "resize": "fit" }
+                }
+              }
+            ]
+          }
+        },
+        "quote_count": 2,
+        "reply_count": 1,
+        "retweet_count": 8,
+        "favorite_count": 17,
+        "entities": {
+          "hashtags": [],
+          "urls": [
+            {
+              "url": "https://t.co/KaYiGpAn5Q",
+              "expanded_url": "https://twitter.com/i/web/status/1019596630935441408",
+              "display_url": "twitter.com/i/web/status/1…",
+              "indices": [114, 137]
+            }
+          ],
+          "user_mentions": [],
+          "symbols": []
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "filter_level": "low",
+        "lang": "en"
+      },
+      "is_quote_status": false,
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [],
+        "urls": [],
+        "user_mentions": [
+          {
+            "screen_name": "AZgrabaplate",
+            "name": "Patricia Conte",
+            "id": 17323021,
+            "id_str": "17323021",
+            "indices": [3, 16]
+          }
+        ],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:56:15 +0000 2018",
+      "id": 1021544553617268700,
+      "id_str": "1021544553617268737",
+      "text": "RT @LandrysInc: Recharge and refuel with this vibrant and delicious #Chicken #CobbSalad from @DosCaminos!  📷| Instagram user, eatsmyfave ht…",
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 317582440,
+        "id_str": "317582440",
+        "name": "Antivirus Partner",
+        "screen_name": "Mctowers",
+        "location": "www.midlandcomputertowers.com",
+        "url": "http://www.midlandcomputertowers.com",
+        "description": "Download our App for free estimate Pc tune up\nhttps://pwa.appsvillage.com/186532638120541/index.html\n\nOnline Deals and coupon codes.",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 4980,
+        "friends_count": 5533,
+        "listed_count": 636,
+        "favourites_count": 472033,
+        "statuses_count": 218217,
+        "created_at": "Wed Jun 15 04:29:17 +0000 2011",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "022330",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme4/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme4/bg.gif",
+        "profile_background_tile": false,
+        "profile_link_color": "4A913C",
+        "profile_sidebar_border_color": "A8C7F7",
+        "profile_sidebar_fill_color": "C0DFEC",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/692419340864360448/HrlPqlL9_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/692419340864360448/HrlPqlL9_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/317582440/1464147939",
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Sat Jul 21 15:00:01 +0000 2018",
+        "id": 1020684830344982500,
+        "id_str": "1020684830344982528",
+        "text": "Recharge and refuel with this vibrant and delicious #Chicken #CobbSalad from @DosCaminos!  📷| Instagram user, eatsm… https://t.co/AHicXj4lHM",
+        "display_text_range": [0, 140],
+        "source": "<a href=\"https://prod2.sprinklr.com\" rel=\"nofollow\">Sprinklr Publisher</a>",
+        "truncated": true,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 776469763,
+          "id_str": "776469763",
+          "name": "Landry's, Inc.",
+          "screen_name": "LandrysInc",
+          "location": null,
+          "url": "http://www.landrysinc.com",
+          "description": "Owner/Operator of more than 40 brands with over 500 locations internationally: @Mortons @KemahBoardwalk @BubbaGumpCo @Vic_n_Anthonys @GoldenNuggetAC & more!",
+          "translator_type": "none",
+          "protected": false,
+          "verified": false,
+          "followers_count": 6186,
+          "friends_count": 260,
+          "listed_count": 57,
+          "favourites_count": 328,
+          "statuses_count": 2337,
+          "created_at": "Thu Aug 23 18:05:14 +0000 2012",
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": false,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "231F20",
+          "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+          "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+          "profile_background_tile": false,
+          "profile_link_color": "0084B4",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/2552695089/tkqnn9ci58t99fu8ueie_normal.jpeg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2552695089/tkqnn9ci58t99fu8ueie_normal.jpeg",
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": null,
+          "follow_request_sent": null,
+          "notifications": null
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "extended_tweet": {
+          "full_text": "Recharge and refuel with this vibrant and delicious #Chicken #CobbSalad from @DosCaminos!  📷| Instagram user, eatsmyfave https://t.co/WUxlCgvqvV",
+          "display_text_range": [0, 120],
+          "entities": {
+            "hashtags": [
+              { "text": "Chicken", "indices": [52, 60] },
+              { "text": "CobbSalad", "indices": [61, 71] }
+            ],
+            "urls": [],
+            "user_mentions": [
+              {
+                "screen_name": "DosCaminos",
+                "name": "Dos Caminos",
+                "id": 19911384,
+                "id_str": "19911384",
+                "indices": [77, 88]
+              }
+            ],
+            "symbols": [],
+            "media": [
+              {
+                "id": 1020684828826619900,
+                "id_str": "1020684828826619906",
+                "indices": [121, 144],
+                "media_url": "http://pbs.twimg.com/media/DiozcanXUAIqt28.jpg",
+                "media_url_https": "https://pbs.twimg.com/media/DiozcanXUAIqt28.jpg",
+                "url": "https://t.co/WUxlCgvqvV",
+                "display_url": "pic.twitter.com/WUxlCgvqvV",
+                "expanded_url": "https://twitter.com/LandrysInc/status/1020684830344982528/photo/1",
+                "type": "photo",
+                "sizes": {
+                  "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                  "small": { "w": 680, "h": 537, "resize": "fit" },
+                  "large": { "w": 1024, "h": 808, "resize": "fit" },
+                  "medium": { "w": 1024, "h": 808, "resize": "fit" }
+                }
+              }
+            ]
+          },
+          "extended_entities": {
+            "media": [
+              {
+                "id": 1020684828826619900,
+                "id_str": "1020684828826619906",
+                "indices": [121, 144],
+                "media_url": "http://pbs.twimg.com/media/DiozcanXUAIqt28.jpg",
+                "media_url_https": "https://pbs.twimg.com/media/DiozcanXUAIqt28.jpg",
+                "url": "https://t.co/WUxlCgvqvV",
+                "display_url": "pic.twitter.com/WUxlCgvqvV",
+                "expanded_url": "https://twitter.com/LandrysInc/status/1020684830344982528/photo/1",
+                "type": "photo",
+                "sizes": {
+                  "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                  "small": { "w": 680, "h": 537, "resize": "fit" },
+                  "large": { "w": 1024, "h": 808, "resize": "fit" },
+                  "medium": { "w": 1024, "h": 808, "resize": "fit" }
+                }
+              }
+            ]
+          }
+        },
+        "quote_count": 0,
+        "reply_count": 1,
+        "retweet_count": 6,
+        "favorite_count": 4,
+        "entities": {
+          "hashtags": [
+            { "text": "Chicken", "indices": [52, 60] },
+            { "text": "CobbSalad", "indices": [61, 71] }
+          ],
+          "urls": [
+            {
+              "url": "https://t.co/AHicXj4lHM",
+              "expanded_url": "https://twitter.com/i/web/status/1020684830344982528",
+              "display_url": "twitter.com/i/web/status/1…",
+              "indices": [117, 140]
+            }
+          ],
+          "user_mentions": [
+            {
+              "screen_name": "DosCaminos",
+              "name": "Dos Caminos",
+              "id": 19911384,
+              "id_str": "19911384",
+              "indices": [77, 88]
+            }
+          ],
+          "symbols": []
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "filter_level": "low",
+        "lang": "en"
+      },
+      "is_quote_status": false,
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          { "text": "Chicken", "indices": [68, 76] },
+          { "text": "CobbSalad", "indices": [77, 87] }
+        ],
+        "urls": [],
+        "user_mentions": [
+          {
+            "screen_name": "LandrysInc",
+            "name": "Landry's, Inc.",
+            "id": 776469763,
+            "id_str": "776469763",
+            "indices": [3, 14]
+          },
+          {
+            "screen_name": "DosCaminos",
+            "name": "Dos Caminos",
+            "id": 19911384,
+            "id_str": "19911384",
+            "indices": [93, 104]
+          }
+        ],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:56:12 +0000 2018",
+      "id": 1021544541265059800,
+      "id_str": "1021544541265059844",
+      "text": "#Honey #Garlic #Chicken mad in the #instantpot not bad, I’ll get this thing sorted yet. \n\n#homemade #cooking… https://t.co/kLnj6aSPDp",
+      "source": "<a href=\"http://instagram.com\" rel=\"nofollow\">Instagram</a>",
+      "truncated": true,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 1005139589810532400,
+        "id_str": "1005139589810532352",
+        "name": "knifetales",
+        "screen_name": "knifetales",
+        "location": "Florida, USA",
+        "url": null,
+        "description": "Cooking enthusiast",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 3,
+        "friends_count": 5,
+        "listed_count": 0,
+        "favourites_count": 0,
+        "statuses_count": 52,
+        "created_at": "Fri Jun 08 17:28:47 +0000 2018",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "F5F8FA",
+        "profile_background_image_url": "",
+        "profile_background_image_url_https": "",
+        "profile_background_tile": false,
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1005140028576686086/GcjABzmp_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1005140028576686086/GcjABzmp_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1005139589810532352/1528479046",
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "extended_tweet": {
+        "full_text": "#Honey #Garlic #Chicken mad in the #instantpot not bad, I’ll get this thing sorted yet. \n\n#homemade #cooking #kitchen #cook #scratch https://t.co/qtEGf7sq8P",
+        "display_text_range": [0, 156],
+        "entities": {
+          "hashtags": [
+            { "text": "Honey", "indices": [0, 6] },
+            { "text": "Garlic", "indices": [7, 14] },
+            { "text": "Chicken", "indices": [15, 23] },
+            { "text": "instantpot", "indices": [35, 46] },
+            { "text": "homemade", "indices": [90, 99] },
+            { "text": "cooking", "indices": [100, 108] },
+            { "text": "kitchen", "indices": [109, 117] },
+            { "text": "cook", "indices": [118, 123] },
+            { "text": "scratch", "indices": [124, 132] }
+          ],
+          "urls": [
+            {
+              "url": "https://t.co/qtEGf7sq8P",
+              "expanded_url": "https://www.instagram.com/p/Bll-hrGgkcm/?utm_source=ig_twitter_share&igshid=1ubqjtowz73s",
+              "display_url": "instagram.com/p/Bll-hrGgkcm/…",
+              "indices": [133, 156]
+            }
+          ],
+          "user_mentions": [],
+          "symbols": []
+        }
+      },
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "favorite_count": 1,
+      "entities": {
+        "hashtags": [
+          { "text": "Honey", "indices": [0, 6] },
+          { "text": "Garlic", "indices": [7, 14] },
+          { "text": "Chicken", "indices": [15, 23] },
+          { "text": "instantpot", "indices": [35, 46] },
+          { "text": "homemade", "indices": [90, 99] },
+          { "text": "cooking", "indices": [100, 108] }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/kLnj6aSPDp",
+            "expanded_url": "https://twitter.com/i/web/status/1021544541265059844",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [110, 133]
+          }
+        ],
+        "user_mentions": [],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:54:00 +0000 2018",
+      "id": 1021543985985318900,
+      "id_str": "1021543985985318912",
+      "text": "RT @larrys_noodles: Take The Tips From Larrys Noodles To Cook Finger Licking Asian BBQ Chicken\n\n#LarrysNoodles #Food #Chef #BBQChicken #Chi…",
+      "source": "<a href=\"https://buffer.com\" rel=\"nofollow\">Buffer</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 462901147,
+        "id_str": "462901147",
+        "name": "Jen Schreiner",
+        "screen_name": "InspiringSaving",
+        "location": "Clifton Park, New York",
+        "url": "http://www.inspiringsavings.com",
+        "description": "I'm a Upstate New York busy mom, RN, avid shopper, cupcake lover & faith following, bargain hunter striving to live my best life everyday.",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 27194,
+        "friends_count": 19294,
+        "listed_count": 223,
+        "favourites_count": 15423,
+        "statuses_count": 34503,
+        "created_at": "Fri Jan 13 14:02:53 +0000 2012",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "B2DFDA",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme13/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme13/bg.gif",
+        "profile_background_tile": true,
+        "profile_link_color": "189FC4",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "FFFFFF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/650001053337780224/RRtUvSht_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/650001053337780224/RRtUvSht_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/462901147/1521562108",
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Tue Jul 17 07:22:49 +0000 2018",
+        "id": 1019120221699891200,
+        "id_str": "1019120221699891200",
+        "text": "Take The Tips From Larrys Noodles To Cook Finger Licking Asian BBQ Chicken\n\n#LarrysNoodles #Food #Chef #BBQChicken… https://t.co/fe2LLkwhMJ",
+        "display_text_range": [0, 140],
+        "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+        "truncated": true,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 971414604927598600,
+          "id_str": "971414604927598592",
+          "name": "Larry Noodles",
+          "screen_name": "larrynoodles",
+          "location": null,
+          "url": null,
+          "description": "I am a retired chef who loves to talk food, especially NOODLES!!",
+          "translator_type": "none",
+          "protected": false,
+          "verified": false,
+          "followers_count": 403,
+          "friends_count": 258,
+          "listed_count": 2,
+          "favourites_count": 337,
+          "statuses_count": 147,
+          "created_at": "Wed Mar 07 15:57:44 +0000 2018",
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": false,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "F5F8FA",
+          "profile_background_image_url": "",
+          "profile_background_image_url_https": "",
+          "profile_background_tile": false,
+          "profile_link_color": "1DA1F2",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/971416848230244353/WnIs_jVV_normal.jpg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/971416848230244353/WnIs_jVV_normal.jpg",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/971414604927598592/1526014528",
+          "default_profile": true,
+          "default_profile_image": false,
+          "following": null,
+          "follow_request_sent": null,
+          "notifications": null
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "extended_tweet": {
+          "full_text": "Take The Tips From Larrys Noodles To Cook Finger Licking Asian BBQ Chicken\n\n#LarrysNoodles #Food #Chef #BBQChicken #Chicken\n\nVisit- https://t.co/D6gCqrhXYi https://t.co/wPDJ70H16l",
+          "display_text_range": [0, 155],
+          "entities": {
+            "hashtags": [
+              { "text": "LarrysNoodles", "indices": [76, 90] },
+              { "text": "Food", "indices": [91, 96] },
+              { "text": "Chef", "indices": [97, 102] },
+              { "text": "BBQChicken", "indices": [103, 114] },
+              { "text": "Chicken", "indices": [115, 123] }
+            ],
+            "urls": [
+              {
+                "url": "https://t.co/D6gCqrhXYi",
+                "expanded_url": "https://larrysnoodles.blogspot.com/",
+                "display_url": "larrysnoodles.blogspot.com",
+                "indices": [132, 155]
+              }
+            ],
+            "user_mentions": [],
+            "symbols": [],
+            "media": [
+              {
+                "id": 1019120209876209700,
+                "id_str": "1019120209876209666",
+                "indices": [156, 179],
+                "media_url": "http://pbs.twimg.com/media/DiSkbm0X0AIovl3.jpg",
+                "media_url_https": "https://pbs.twimg.com/media/DiSkbm0X0AIovl3.jpg",
+                "url": "https://t.co/wPDJ70H16l",
+                "display_url": "pic.twitter.com/wPDJ70H16l",
+                "expanded_url": "https://twitter.com/larrys_noodles/status/1019120221699891200/photo/1",
+                "type": "photo",
+                "sizes": {
+                  "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                  "small": { "w": 680, "h": 383, "resize": "fit" },
+                  "large": { "w": 800, "h": 450, "resize": "fit" },
+                  "medium": { "w": 800, "h": 450, "resize": "fit" }
+                }
+              }
+            ]
+          },
+          "extended_entities": {
+            "media": [
+              {
+                "id": 1019120209876209700,
+                "id_str": "1019120209876209666",
+                "indices": [156, 179],
+                "media_url": "http://pbs.twimg.com/media/DiSkbm0X0AIovl3.jpg",
+                "media_url_https": "https://pbs.twimg.com/media/DiSkbm0X0AIovl3.jpg",
+                "url": "https://t.co/wPDJ70H16l",
+                "display_url": "pic.twitter.com/wPDJ70H16l",
+                "expanded_url": "https://twitter.com/larrys_noodles/status/1019120221699891200/photo/1",
+                "type": "photo",
+                "sizes": {
+                  "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                  "small": { "w": 680, "h": 383, "resize": "fit" },
+                  "large": { "w": 800, "h": 450, "resize": "fit" },
+                  "medium": { "w": 800, "h": 450, "resize": "fit" }
+                }
+              }
+            ]
+          }
+        },
+        "quote_count": 0,
+        "reply_count": 0,
+        "retweet_count": 16,
+        "favorite_count": 29,
+        "entities": {
+          "hashtags": [
+            { "text": "LarrysNoodles", "indices": [76, 90] },
+            { "text": "Food", "indices": [91, 96] },
+            { "text": "Chef", "indices": [97, 102] },
+            { "text": "BBQChicken", "indices": [103, 114] }
+          ],
+          "urls": [
+            {
+              "url": "https://t.co/fe2LLkwhMJ",
+              "expanded_url": "https://twitter.com/i/web/status/1019120221699891200",
+              "display_url": "twitter.com/i/web/status/1…",
+              "indices": [116, 139]
+            }
+          ],
+          "user_mentions": [],
+          "symbols": []
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "filter_level": "low",
+        "lang": "en"
+      },
+      "is_quote_status": false,
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          { "text": "LarrysNoodles", "indices": [96, 110] },
+          { "text": "Food", "indices": [111, 116] },
+          { "text": "Chef", "indices": [117, 122] },
+          { "text": "BBQChicken", "indices": [123, 134] }
+        ],
+        "urls": [],
+        "user_mentions": [
+          {
+            "screen_name": "larrys_noodles",
+            "name": null,
+            "id": null,
+            "id_str": null,
+            "indices": [3, 18]
+          }
+        ],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:53:01 +0000 2018",
+      "id": 1021543740580683800,
+      "id_str": "1021543740580683776",
+      "text": "@TheArieAir @zoelfick Tidak bermaksud ???\n\nJika tidak bermaksud, sudah kah ada klarifikasi &amp; permohonan maaf ? \n\n#chicken\n#chicken",
+      "display_text_range": [22, 134],
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "truncated": false,
+      "in_reply_to_status_id": 1021542402236985300,
+      "in_reply_to_status_id_str": "1021542402236985344",
+      "in_reply_to_user_id": 164604281,
+      "in_reply_to_user_id_str": "164604281",
+      "in_reply_to_screen_name": "TheArieAir",
+      "user": {
+        "id": 2803383132,
+        "id_str": "2803383132",
+        "name": "AYODYA",
+        "screen_name": "ayudh41",
+        "location": "Jakarta",
+        "url": null,
+        "description": null,
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 1650,
+        "friends_count": 2115,
+        "listed_count": 0,
+        "favourites_count": 107350,
+        "statuses_count": 62335,
+        "created_at": "Thu Sep 11 09:53:22 +0000 2014",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "lang": "id",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "89C9FA",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_link_color": "89C9FA",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1089572811331399681/Q3NWfPSu_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1089572811331399681/Q3NWfPSu_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2803383132/1509258774",
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "quote_count": 0,
+      "reply_count": 3,
+      "retweet_count": 0,
+      "favorite_count": 1,
+      "entities": {
+        "hashtags": [
+          { "text": "chicken", "indices": [117, 125] },
+          { "text": "chicken", "indices": [126, 134] }
+        ],
+        "urls": [],
+        "user_mentions": [
+          {
+            "screen_name": "TheArieAir",
+            "name": "Arie Dirgantara",
+            "id": 164604281,
+            "id_str": "164604281",
+            "indices": [0, 11]
+          },
+          {
+            "screen_name": "zoelfick",
+            "name": "Zulfikar Akbar",
+            "id": 86934018,
+            "id_str": "86934018",
+            "indices": [12, 21]
+          }
+        ],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "filter_level": "low",
+      "lang": "in",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:51:58 +0000 2018",
+      "id": 1021543473864994800,
+      "id_str": "1021543473864994816",
+      "text": "RT @barntiques859: antique hen chicken whirligig yard decor  https://t.co/z971rGoV87  https://t.co/vdELWcZdcX #hen #chicken #whirligig",
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "truncated": false,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 1724613062,
+        "id_str": "1724613062",
+        "name": "Jack Wright🇺🇸#BoycottNRA🚫",
+        "screen_name": "machonejack",
+        "location": "louisville ky",
+        "url": null,
+        "description": "Aircraft Maintenance Controller, a Teamster, & US Navy Vet. Love Mustangs & garage time repairs/welding, basically an ole greasy jet mechanic missing the 80's.",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 7767,
+        "friends_count": 8434,
+        "listed_count": 78,
+        "favourites_count": 258463,
+        "statuses_count": 156564,
+        "created_at": "Tue Sep 03 06:39:17 +0000 2013",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/870867637923983360/2lnfDh6p_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/870867637923983360/2lnfDh6p_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1724613062/1461806460",
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Mon Jul 23 19:01:33 +0000 2018",
+        "id": 1021470387501183000,
+        "id_str": "1021470387501182977",
+        "text": "antique hen chicken whirligig yard decor  https://t.co/z971rGoV87  https://t.co/vdELWcZdcX #hen #chicken #whirligig",
+        "source": "<a href=\"https://www.socialjukebox.com\" rel=\"nofollow\">The Social Jukebox</a>",
+        "truncated": false,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+          "id": 224653835,
+          "id_str": "224653835",
+          "name": "Paulasbarntiques",
+          "screen_name": "barntiques859",
+          "location": "New Hampshire/Florida",
+          "url": null,
+          "description": "Paula's Barntiques             \nPromoting for well screened small business sellers                                           http://ebay.to/2lKwNMO",
+          "translator_type": "regular",
+          "protected": false,
+          "verified": false,
+          "followers_count": 36141,
+          "friends_count": 19585,
+          "listed_count": 3417,
+          "favourites_count": 10,
+          "statuses_count": 2030455,
+          "created_at": "Thu Dec 09 14:48:38 +0000 2010",
+          "utc_offset": null,
+          "time_zone": null,
+          "geo_enabled": true,
+          "lang": "en",
+          "contributors_enabled": false,
+          "is_translator": false,
+          "profile_background_color": "FFF04D",
+          "profile_background_image_url": "http://abs.twimg.com/images/themes/theme19/bg.gif",
+          "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme19/bg.gif",
+          "profile_background_tile": false,
+          "profile_link_color": "19CF86",
+          "profile_sidebar_border_color": "FFF8AD",
+          "profile_sidebar_fill_color": "F6FFD1",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "profile_image_url": "http://pbs.twimg.com/profile_images/1186436452/barnPaula_Hutchinson_logo_1__normal.JPG",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1186436452/barnPaula_Hutchinson_logo_1__normal.JPG",
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/224653835/1398230909",
+          "default_profile": false,
+          "default_profile_image": false,
+          "following": null,
+          "follow_request_sent": null,
+          "notifications": null
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "quote_count": 0,
+        "reply_count": 0,
+        "retweet_count": 4,
+        "favorite_count": 1,
+        "entities": {
+          "hashtags": [
+            { "text": "hen", "indices": [91, 95] },
+            { "text": "chicken", "indices": [96, 104] },
+            { "text": "whirligig", "indices": [105, 115] }
+          ],
+          "urls": [
+            {
+              "url": "https://t.co/z971rGoV87",
+              "expanded_url": "http://bit.ly/138zSRS",
+              "display_url": "bit.ly/138zSRS",
+              "indices": [42, 65]
+            }
+          ],
+          "user_mentions": [],
+          "symbols": [],
+          "media": [
+            {
+              "id": 336905364618477600,
+              "id_str": "336905364618477570",
+              "indices": [67, 90],
+              "media_url": "http://pbs.twimg.com/media/BKztpOUCAAIFtGZ.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/BKztpOUCAAIFtGZ.jpg",
+              "url": "https://t.co/vdELWcZdcX",
+              "display_url": "pic.twitter.com/vdELWcZdcX",
+              "expanded_url": "https://twitter.com/barntiques859/status/336905364610088960/photo/1",
+              "type": "photo",
+              "sizes": {
+                "large": { "w": 1300, "h": 975, "resize": "fit" },
+                "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                "medium": { "w": 1200, "h": 900, "resize": "fit" },
+                "small": { "w": 680, "h": 510, "resize": "fit" }
+              },
+              "source_status_id": 336905364610088960,
+              "source_status_id_str": "336905364610088960",
+              "source_user_id": 224653835,
+              "source_user_id_str": "224653835"
+            }
+          ]
+        },
+        "extended_entities": {
+          "media": [
+            {
+              "id": 336905364618477600,
+              "id_str": "336905364618477570",
+              "indices": [67, 90],
+              "media_url": "http://pbs.twimg.com/media/BKztpOUCAAIFtGZ.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/BKztpOUCAAIFtGZ.jpg",
+              "url": "https://t.co/vdELWcZdcX",
+              "display_url": "pic.twitter.com/vdELWcZdcX",
+              "expanded_url": "https://twitter.com/barntiques859/status/336905364610088960/photo/1",
+              "type": "photo",
+              "sizes": {
+                "large": { "w": 1300, "h": 975, "resize": "fit" },
+                "thumb": { "w": 150, "h": 150, "resize": "crop" },
+                "medium": { "w": 1200, "h": 900, "resize": "fit" },
+                "small": { "w": 680, "h": 510, "resize": "fit" }
+              },
+              "source_status_id": 336905364610088960,
+              "source_status_id_str": "336905364610088960",
+              "source_user_id": 224653835,
+              "source_user_id_str": "224653835"
+            }
+          ]
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "filter_level": "low",
+        "lang": "en"
+      },
+      "is_quote_status": false,
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          { "text": "hen", "indices": [110, 114] },
+          { "text": "chicken", "indices": [115, 123] },
+          { "text": "whirligig", "indices": [124, 134] }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/z971rGoV87",
+            "expanded_url": "http://bit.ly/138zSRS",
+            "display_url": "bit.ly/138zSRS",
+            "indices": [61, 84]
+          }
+        ],
+        "user_mentions": [
+          {
+            "screen_name": "barntiques859",
+            "name": "Paulasbarntiques",
+            "id": 224653835,
+            "id_str": "224653835",
+            "indices": [3, 17]
+          }
+        ],
+        "symbols": [],
+        "media": [
+          {
+            "id": 336905364618477600,
+            "id_str": "336905364618477570",
+            "indices": [86, 109],
+            "media_url": "http://pbs.twimg.com/media/BKztpOUCAAIFtGZ.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/BKztpOUCAAIFtGZ.jpg",
+            "url": "https://t.co/vdELWcZdcX",
+            "display_url": "pic.twitter.com/vdELWcZdcX",
+            "expanded_url": "https://twitter.com/barntiques859/status/336905364610088960/photo/1",
+            "type": "photo",
+            "sizes": {
+              "large": { "w": 1300, "h": 975, "resize": "fit" },
+              "thumb": { "w": 150, "h": 150, "resize": "crop" },
+              "medium": { "w": 1200, "h": 900, "resize": "fit" },
+              "small": { "w": 680, "h": 510, "resize": "fit" }
+            },
+            "source_status_id": 336905364610088960,
+            "source_status_id_str": "336905364610088960",
+            "source_user_id": 224653835,
+            "source_user_id_str": "224653835"
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 336905364618477600,
+            "id_str": "336905364618477570",
+            "indices": [86, 109],
+            "media_url": "http://pbs.twimg.com/media/BKztpOUCAAIFtGZ.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/BKztpOUCAAIFtGZ.jpg",
+            "url": "https://t.co/vdELWcZdcX",
+            "display_url": "pic.twitter.com/vdELWcZdcX",
+            "expanded_url": "https://twitter.com/barntiques859/status/336905364610088960/photo/1",
+            "type": "photo",
+            "sizes": {
+              "large": { "w": 1300, "h": 975, "resize": "fit" },
+              "thumb": { "w": 150, "h": 150, "resize": "crop" },
+              "medium": { "w": 1200, "h": 900, "resize": "fit" },
+              "small": { "w": 680, "h": 510, "resize": "fit" }
+            },
+            "source_status_id": 336905364610088960,
+            "source_status_id_str": "336905364610088960",
+            "source_user_id": 224653835,
+            "source_user_id_str": "224653835"
+          }
+        ]
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:50:14 +0000 2018",
+      "id": 1021543041067298800,
+      "id_str": "1021543041067298817",
+      "text": "A Healthy Brussel Sprout Stir Fry to start the week. 💪🏻 #healthyfood #brusselsprouts #chicken #veggies #stirfry @ N… https://t.co/4urvzhdbEg",
+      "source": "<a href=\"http://instagram.com\" rel=\"nofollow\">Instagram</a>",
+      "truncated": true,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 4706544939,
+        "id_str": "4706544939",
+        "name": "FeedingMyFiancée ♨️",
+        "screen_name": "feedinmyfiancee",
+        "location": "North Wales, PA",
+        "url": "http://www.feedingmyfiancee.com",
+        "description": "🔪 Home Cook 🙋🏼 Professional Wife Feeder 🙅🏻‍♂️ Fighting Hanger Since 2012 📍 Pennsylvania Native",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 2419,
+        "friends_count": 1246,
+        "listed_count": 13,
+        "favourites_count": 175,
+        "statuses_count": 704,
+        "created_at": "Mon Jan 04 16:56:11 +0000 2016",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "F5F8FA",
+        "profile_background_image_url": "",
+        "profile_background_image_url_https": "",
+        "profile_background_tile": false,
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/883410615192231937/vDpXqcN5_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/883410615192231937/vDpXqcN5_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/4706544939/1548196200",
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "extended_tweet": {
+        "full_text": "A Healthy Brussel Sprout Stir Fry to start the week. 💪🏻 #healthyfood #brusselsprouts #chicken #veggies #stirfry @ North Wales, Pennsylvania https://t.co/57vWPzqJIA",
+        "display_text_range": [0, 163],
+        "entities": {
+          "hashtags": [
+            { "text": "healthyfood", "indices": [56, 68] },
+            { "text": "brusselsprouts", "indices": [69, 84] },
+            { "text": "chicken", "indices": [85, 93] },
+            { "text": "veggies", "indices": [94, 102] },
+            { "text": "stirfry", "indices": [103, 111] }
+          ],
+          "urls": [
+            {
+              "url": "https://t.co/57vWPzqJIA",
+              "expanded_url": "https://www.instagram.com/p/Bll92G7gvYg/?utm_source=ig_twitter_share&igshid=zgmqjipm1dhr",
+              "display_url": "instagram.com/p/Bll92G7gvYg/…",
+              "indices": [140, 163]
+            }
+          ],
+          "user_mentions": [],
+          "symbols": []
+        }
+      },
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "entities": {
+        "hashtags": [
+          { "text": "healthyfood", "indices": [56, 68] },
+          { "text": "brusselsprouts", "indices": [69, 84] },
+          { "text": "chicken", "indices": [85, 93] },
+          { "text": "veggies", "indices": [94, 102] },
+          { "text": "stirfry", "indices": [103, 111] }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/4urvzhdbEg",
+            "expanded_url": "https://twitter.com/i/web/status/1021543041067298817",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [117, 140]
+          }
+        ],
+        "user_mentions": [],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    },
+    {
+      "created_at": "Mon Jul 23 23:49:42 +0000 2018",
+      "id": 1021542903494205400,
+      "id_str": "1021542903494205441",
+      "text": "What came first? The chicken? Or the egg? 🐣\n\n#eggs #eggsalad #ionlylikeeggswhentheydonttastelikeeggs #chicken… https://t.co/aYbL3UFvLm",
+      "source": "<a href=\"http://instagram.com\" rel=\"nofollow\">Instagram</a>",
+      "truncated": true,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 350426526,
+        "id_str": "350426526",
+        "name": "Dory Mariana-Thérèse",
+        "screen_name": "AtomikKKittie",
+        "location": "Hamilton, ON",
+        "url": "http://foodieinfatpants.com",
+        "description": "Delusional Princess/Wannabe Writer & Chef/Wrestling Fan/Original Seashell Hunter",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 88,
+        "friends_count": 24,
+        "listed_count": 20,
+        "favourites_count": 49,
+        "statuses_count": 4404,
+        "created_at": "Sun Aug 07 19:12:29 +0000 2011",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "1A1B1F",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme9/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme9/bg.gif",
+        "profile_background_tile": false,
+        "profile_link_color": "2FC2EF",
+        "profile_sidebar_border_color": "181A1E",
+        "profile_sidebar_fill_color": "252429",
+        "profile_text_color": "666666",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/774826350632923137/YSFgOz6d_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/774826350632923137/YSFgOz6d_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/350426526/1433999777",
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "extended_tweet": {
+        "full_text": "What came first? The chicken? Or the egg? 🐣\n\n#eggs #eggsalad #ionlylikeeggswhentheydonttastelikeeggs #chicken #foodporn #foodstagram #food #foodpics #foodlover #foodie #foodieinfatpants https://t.co/juZs3kRpNo",
+        "display_text_range": [0, 209],
+        "entities": {
+          "hashtags": [
+            { "text": "eggs", "indices": [45, 50] },
+            { "text": "eggsalad", "indices": [51, 60] },
+            {
+              "text": "ionlylikeeggswhentheydonttastelikeeggs",
+              "indices": [61, 100]
+            },
+            { "text": "chicken", "indices": [101, 109] },
+            { "text": "foodporn", "indices": [110, 119] },
+            { "text": "foodstagram", "indices": [120, 132] },
+            { "text": "food", "indices": [133, 138] },
+            { "text": "foodpics", "indices": [139, 148] },
+            { "text": "foodlover", "indices": [149, 159] },
+            { "text": "foodie", "indices": [160, 167] },
+            { "text": "foodieinfatpants", "indices": [168, 185] }
+          ],
+          "urls": [
+            {
+              "url": "https://t.co/juZs3kRpNo",
+              "expanded_url": "https://www.instagram.com/p/Bll9yOrnd9h/?utm_source=ig_twitter_share&igshid=1n6j47iggrmga",
+              "display_url": "instagram.com/p/Bll9yOrnd9h/…",
+              "indices": [186, 209]
+            }
+          ],
+          "user_mentions": [],
+          "symbols": []
+        }
+      },
+      "quote_count": 0,
+      "reply_count": 0,
+      "retweet_count": 0,
+      "favorite_count": 1,
+      "entities": {
+        "hashtags": [
+          { "text": "eggs", "indices": [45, 50] },
+          { "text": "eggsalad", "indices": [51, 60] },
+          {
+            "text": "ionlylikeeggswhentheydonttastelikeeggs",
+            "indices": [61, 100]
+          },
+          { "text": "chicken", "indices": [101, 109] }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/aYbL3UFvLm",
+            "expanded_url": "https://twitter.com/i/web/status/1021542903494205441",
+            "display_url": "twitter.com/i/web/status/1…",
+            "indices": [111, 134]
+          }
+        ],
+        "user_mentions": [],
+        "symbols": []
+      },
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "filter_level": "low",
+      "lang": "en",
+      "matching_rules": [{ "tag": null }]
+    }
+  ],
+  "next": "eyJhdXRoZW50aWNpdHkiOiJiZmZhZTI2NjVjZGEwZTgzZWQwNDE2N2U2ZDk4ZDg5NTFiMTI1NWRkOTc2YmY3N2ViMjhiNWYxNjg2OGNjNzlhIiwiZnJvbURhdGUiOiIyMDE4MDcyMTAwMDAiLCJ0b0RhdGUiOiIyMDE4MDcyNDAwMDAiLCJuZXh0IjoiMjAxODA3MjQwMDAwMDAtMTAyMTU0MjkwMzQ5NDIwNTQ0MS0wIn0=",
+  "requestParameters": {
+    "maxResults": 10,
+    "fromDate": "201807210000",
+    "toDate": "201807240000"
+  }
+}

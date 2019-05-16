@@ -2,19 +2,19 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
-// Set view engine and body parser.
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Global variables.
 var bearerToken;
-var token;
-var start;
-var finish;
-var endpoint;
-var maxTweets;
-var maxRequests;
-var query;
+
+const router = require("./routes/collect.js");
+
+app.use(router);
+
+// Homepage route.
+app.get("/", (req, res) => {
+  res.render("generate");
+});
 
 // Get index which allows public/private input.
 app.get("/generate", (req, res) => {
@@ -71,88 +71,104 @@ app.post("/generate", (req, res) => {
   }, 1000);
 });
 
-app.get("/collect", (req, res) => {
-  res.render("collect", {
-    token: token,
-    start: start,
-    finish: finish,
-    endpoint: endpoint,
-    maxRequests: maxRequests,
-    maxTweets: maxTweets,
-    query: query
-  });
-});
+// app.get("/collect", (req, res) => {
+//   res.render("collect", {
+//     token: token,
+//     start: start,
+//     finish: finish,
+//     endpoint: endpoint,
+//     maxRequests: maxRequests,
+//     maxTweets: maxTweets,
+//     query: query
+//   });
+// });
 
-app.post("/collect", (req, res) => {
-  token = req.body.token;
-  start = req.body.start;
-  finish = req.body.finish;
-  endpoint = req.body.endpoint;
-  maxTweets = req.body.maxTweets;
-  maxRequests = req.body.maxRequests;
-  query = req.body.query;
+// app.post("/collect", (req, res) => {
+//   token = req.body.token;
+//   start = req.body.start;
+//   finish = req.body.finish;
+//   endpoint = req.body.endpoint;
+//   maxTweets = req.body.maxTweets;
+//   maxRequests = req.body.maxRequests;
+//   query = req.body.query;
 
-  twitterSearch(token, start, finish, endpoint, maxTweets, maxRequests, query);
+//   twitterSearch(token, start, finish, endpoint, maxTweets, maxRequests, query);
 
-  function twitterSearch(
-    token,
-    start,
-    finish,
-    endpoint,
-    maxTweets,
-    maxRequests,
-    query
-  ) {
-    const request = require("request");
+//   function twitterSearch(
+//     token,
+//     start,
+//     finish,
+//     endpoint,
+//     maxTweets,
+//     maxRequests,
+//     query
+//   ) {
+//     const request = require("request");
+//     const fs = require("fs");
 
-    // Question mark allows query below.
-    const url = endpoint + "?";
-    const completedQuery = "(" + query + ")";
-    const bearerToken = "Bearer " + token;
-    var counter = 0;
-    while (counter < maxRequests) {
-      if (counter === 0) {
-        var queryObject = {
-          query: completedQuery,
-          maxResults: maxTweets,
-          fromDate: start,
-          toDate: finish
-        };
-      } else {
-        var queryObject = {
-          query: completedQuery,
-          maxResults: maxTweets,
-          fromDate: start,
-          toDate: finish,
-          next: nextToken
-        };
-      }
-      // Structure request (JSON content).
-      request(
-        {
-          url: url,
-          qs: queryObject,
-          headers: {
-            Authorization: bearerToken,
-            "Content-Type": "application/json"
-          }
-        },
-        (err, res, body) => {
-          if (err) {
-            console.log("error:", err);
-          } else if (res && body) {
-            console.log("statusCode:", res && res.statusCode);
-          }
-        }
-      );
-    }
-  }
+//     // Question mark allows query below.
+//     const url = endpoint + "?";
+//     const completedQuery = "(" + query + ")";
+//     const bearerToken = "Bearer " + token;
+//     var counter = 0;
+//     var queryObject;
 
-  // Should be a promise.
-  setTimeout(() => {
-    res.redirect("/collect");
-  }, 10000);
-});
+//     // while (counter < Number(maxRequests)) {
+//     if (counter === 0) {
+//       queryObject = {
+//         query: completedQuery,
+//         maxResults: Number(maxTweets),
+//         fromDate: start,
+//         toDate: finish
+//       };
+//     } else {
+//       queryObject = {
+//         query: completedQuery,
+//         maxResults: Number(maxTweets),
+//         fromDate: start,
+//         toDate: finish
+//       };
+//     }
+//     // Structure request (JSON content).
+//     request(
+//       {
+//         url: url,
+//         qs: queryObject,
+//         json: true,
+//         headers: {
+//           Authorization: bearerToken,
+//           "Content-Type": "application/json"
+//         }
+//       },
+//       (err, res, body) => {
+//         if (err) {
+//           console.log("error:", err);
+//         } else if (res && body) {
+//           counter++;
+//           console.log(body);
+//           console.log(body.next);
+//           var json = JSON.stringify(body);
+//           fs.writeFile(
+//             "response-" + counter + "-" + start + ".json",
+//             json,
+//             "utf8",
+//             err => {
+//               if (err) {
+//                 console.log(err);
+//               }
+//             }
+//           );
+//         }
+//       }
+//     );
+//     // }
+//   }
+
+//   // Should be a promise.
+//   setTimeout(() => {
+//     res.redirect("/collect");
+//   }, 10000);
+// });
 
 app.listen(8080, () => {
   console.log("Server is running on port 8080");
