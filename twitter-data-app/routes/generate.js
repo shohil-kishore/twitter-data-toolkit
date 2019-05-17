@@ -5,7 +5,7 @@ const router = express.Router();
 // Define variables used in multiple routes.
 var bearerToken;
 
-// Get index which allows public/private input.
+// Pass through token.
 router.get("/generate", (req, res) => {
   res.render("generate", {
     bearerToken: bearerToken
@@ -19,7 +19,7 @@ router.post("/generate", (req, res) => {
   generateToken(consumerKey, consumerSecretKey);
 
   /* 
-  This compiles the public and private key and submits a request to the Twitter API to generate the bearer token. This token is required when interacting with the Twitter API.
+  This function compiles the public and private key and submits a request to the Twitter API to generate the bearer token. This token is required when interacting with the Twitter API.
   */
   function generateToken(consumerKey, consumerSecretKey) {
     var request = require("request");
@@ -57,4 +57,5 @@ router.post("/generate", (req, res) => {
   }, 2000);
 });
 
+// Export to App.
 module.exports = router;
