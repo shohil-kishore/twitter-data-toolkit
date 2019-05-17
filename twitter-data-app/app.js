@@ -1,13 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+
+// Setup EJS view engine and body parser (for responses).
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect routes.
-const router = require("./routes/collect.js");
-const router = require("./routes/generate.js");
-app.use(router);
+const collectRoutes = require("./routes/collect.js");
+const generateRoutes = require("./routes/generate.js");
+app.use(collectRoutes);
+app.use(generateRoutes);
 
 // Homepage route.
 app.get("/", (req, res) => {

@@ -1,41 +1,39 @@
-// All routes associated with Bearer Token Generation.
+// All routes associated with bearer token generation.
 const express = require("express");
 const router = express.Router();
 
+// Define variables used in multiple routes.
 var bearerToken;
 
 // Get index which allows public/private input.
-app.get("/generate", (req, res) => {
+router.get("/generate", (req, res) => {
   res.render("generate", {
     bearerToken: bearerToken
   });
 });
 
-// Identify public/private key.
-app.post("/generate", (req, res) => {
-  var secretKey = req.body.secretKey;
-  var publicKey = req.body.publicKey;
+// Identify public/private key entered in form.
+router.post("/generate", (req, res) => {
+  var consumerSecretKey = req.body.secretKey;
+  var consumerKey = req.body.publicKey;
+  generateToken(consumerKey, consumerSecretKey);
 
-  // Makes HTTP request.
-  generateToken(publicKey, secretKey);
-
-  function generateToken(publicKey, secretKey) {
+  /* 
+  This compiles the public and private key and submits a request to the Twitter API to generate the bearer token. This token is required when interacting with the Twitter API.
+  */
+  function generateToken(consumerKey, consumerSecretKey) {
     var request = require("request");
 
-    // Assign public key and secret key.
-    var CONSUMER_KEY = publicKey;
-    var CONSUMER_SECRET_KEY = secretKey;
-
     // Encode public key and secret key.
-    var ENCODED_KEY = new Buffer(
-      CONSUMER_KEY + ":" + CONSUMER_SECRET_KEY
-    ).toString("base64");
+    var encodedKey = new Buffer(consumerKey + ":" + consumerSecretKey).toString(
+      "base64"
+    );
 
     // Configure request.
     var options = {
       url: "https://api.twitter.com/oauth2/token",
       headers: {
-        Authorization: "Basic " + ENCODED_KEY,
+        Authorization: "Basic " + encodedKey,
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
       },
       body: "grant_type=client_credentials"
@@ -56,7 +54,7 @@ app.post("/generate", (req, res) => {
   // Redirect to refreshed page.
   setTimeout(() => {
     res.redirect("/generate");
-  }, 1000);
+  }, 2000);
 });
 
 module.exports = router;

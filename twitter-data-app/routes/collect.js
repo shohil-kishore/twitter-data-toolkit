@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 
+// Define variables used in multiple routes.
 var token;
 var start;
 var finish;

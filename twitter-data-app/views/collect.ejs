@@ -11,32 +11,32 @@
         <div class="form-group">
           <label for="publicKey">Token</label>
           <input type="text" class="form-control" name="token" />
-          <small id="publicKeyHelp" class="form-text text-muted">Copy and paste the bearer token generated on the Token page.</small>
+          <small id="publicKeyHelp" class="form-text text-muted">Enter your bearer token (generated on the Token page).</small>
         </div>
         <div class="form-group">
           <label for="publicKey">Start Date</label>
           <input type="text" class="form-control" name="start" />
-          <small id="publicKeyHelp" class="form-text text-muted">Enter year, month, day, hour and minute sequentially. For example, "201807210000" is 12am on the 21st of July, 2018. </small>
+          <small id="publicKeyHelp" class="form-text text-muted">Enter year, month, day, hour and minute sequentially. For example, 201807210000 is 12am on the 21st of July, 2018. </small>
         </div>
         <div class="form-group">
           <label for="privateKey">Finish Date</label>
           <input type="text" class="form-control" name="finish" />
-          <small id="publicKeyHelp" class="form-text text-muted"></small>
+          <small id="publicKeyHelp" class="form-text text-muted">Enter year, month, day, hour and minute sequentially as above.</small>
         </div>
         <div class="form-group">
           <label for="privateKey">Endpoint</label>
-          <input type="text" class="form-control" name="endpoint" />
-          <small id="publicKeyHelp" class="form-text text-muted">Enter the name of your development environment. For example, "Dev.json".</small>
+          <input type="text" class="form-control" name="endpoint"  value="https://api.twitter.com/1.1/tweets/search/fullarchive/YourEnvironment.json" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter the name of your development environment at the end of the URL. For example, "Dev.json".</small>
         </div>
         <div class="form-group">
           <label for="privateKey">Max Tweets</label>
-          <input type="text" class="form-control" name="maxTweets" />
-          <small id="publicKeyHelp" class="form-text text-muted">Enter the total amount of Tweets to be returned per request. When using the Premium Search endpoint, each request returns 500 Tweets at maximum. </small>
+          <input type="text" class="form-control" name="maxTweets" value="500"/>
+          <small id="publicKeyHelp" class="form-text text-muted">Enter the total amount of Tweets to be returned per request. For Premium Search, 500 is the maximum value. </small>
         </div>
         <div class="form-group">
           <label for="privateKey">Max Requests</label>
-          <input type="text" class="form-control" name="maxRequests" />
-          <small id="publicKeyHelp" class="form-text text-muted">Enter the maximum amount of requests to be made. Use this as a backup to limit how many requests are made. </small>
+          <input type="text" class="form-control" name="maxRequests" value="10"/>
+          <small id="publicKeyHelp" class="form-text text-muted">Enter an uppper limit for how many requests are utilised.</small>
         </div>
         <div class="form-group">
           <label for="privateKey">Query</label>
