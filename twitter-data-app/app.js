@@ -12,11 +12,6 @@ const generateRoutes = require("./routes/generate.js");
 app.use(collectRoutes);
 app.use(generateRoutes);
 
-// Homepage route.
-app.get("/", (req, res) => {
-  res.render("generate");
-});
-
 // Running on port 8080.
 app.listen(8080, () => {
   console.log("Server is running on port 8080");

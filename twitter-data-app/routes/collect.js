@@ -34,48 +34,81 @@ router.post("/collect", (req, res) => {
   maxTweets = req.body.maxTweets;
   maxRequests = req.body.maxRequests;
   query = req.body.query;
-  twitterSearch(token, start, finish, endpoint, maxTweets, maxRequests, query);
 
+  collectData(token, start, finish, endpoint, maxTweets, query, maxRequests);
   /*
   This function compiles the request and makes multiple requests based on a user-defined limit. It then writes the response to a file to be combined later on.
   */
+  async function collectData(
+    token,
+    start,
+    finish,
+    endpoint,
+    maxTweets,
+    query,
+    maxRequests
+  ) {
+    const fs = require("fs");
+
+    for (let index = 0; index < Number(maxRequests); index++) {
+      var json = await twitterSearch(
+        token,
+        start,
+        finish,
+        endpoint,
+        maxTweets,
+        query,
+        index
+      );
+      fs.writeFile(
+        "response-" + (index + 1) + "-" + start + ".json",
+        json,
+        "utf8",
+        err => {
+          if (err) {
+            console.log(err);
+          }
+        }
+      );
+    }
+  }
+
   function twitterSearch(
     token,
     start,
     finish,
     endpoint,
     maxTweets,
-    maxRequests,
-    query
+    query,
+    index
   ) {
     const request = require("request");
-    const fs = require("fs");
 
     // Setup variables.
     const url = endpoint + "?";
     const completedQuery = "(" + query + ")";
     const bearerToken = "Bearer " + token;
-    var counter = 0;
     var queryObject;
 
-    // While loop, keeps running based on a user-defined limit.
-    while (counter < Number(maxRequests)) {
-      if (counter === 0) {
-        queryObject = {
-          query: completedQuery,
-          maxResults: maxTweets,
-          fromDate: start,
-          toDate: finish
-        };
-      } else {
-        queryObject = {
-          query: completedQuery,
-          maxResults: maxTweets,
-          fromDate: start,
-          toDate: finish
-        };
-      }
-      // Structure request (JSON content).
+    // For loop, keeps running based on a user-defined limit.
+    if (index === 0) {
+      queryObject = {
+        query: completedQuery,
+        maxResults: maxTweets,
+        fromDate: start,
+        toDate: finish
+      };
+    } else {
+      queryObject = {
+        query: completedQuery,
+        maxResults: maxTweets,
+        fromDate: start,
+        toDate: finish,
+        next: nextToken
+      };
+    }
+    // Structure request (JSON content).
+    return new Promise(function(resolve, reject) {
       request(
         {
           url: url,
@@ -91,24 +124,14 @@ router.post("/collect", (req, res) => {
           if (err) {
             console.log(err);
           } else if (res && body) {
-            counter++;
-            console.log(body);
-            console.log(body.next);
+            nextToken = body.next;
+            console.log(nextToken);
             var json = JSON.stringify(body);
-            fs.writeFile(
-              "response-" + counter + "-" + start + ".json",
-              json,
-              "utf8",
-              err => {
-                if (err) {
-                  console.log(err);
-                }
-              }
-            );
+            resolve(json);
           }
         }
       );
-    }
+    });
   }
 
   // Should be a promise.
