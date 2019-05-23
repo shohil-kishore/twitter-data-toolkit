@@ -1,23 +1,36 @@
 // Import packages.
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
-const request = require("request");
+const concat = require("json-concat");
+const fs = require('fs-extra')
 
-// Merge route.
+// Merge GET route.
 router.get("/merge", (req, res) => {
-  res.render("merge", {});
+  res.render("merge");
 });
 
-// Find all the files in a specific directory
+// Merge POST route.
+router.post("/merge", (req, res) => {
+  
+  // Loop through file, add each JS object to a new file.
+  concat(
+    {
+      src: "../data",
+      dest: "../result.json"
+    },
+    () => {
+      console.log("JSON files combined successfully.");
+      // Empty data directory.
+      fs.emptyDir("../data", err => {
+        if (err) return console.error(err);
+        console.log("Data directory emptied successfully (data still exists in backup-data folder).");
+      });
+      res.render("merge");
+    }
+  );
+});
 
-// Open each file
-
-// Loop through file, add each JS object to a new file
-
-// Delete/move files from directoy
-
-// Output location of complete file
+// Output location of complete file.
 
 // Export to App.
 module.exports = router;
