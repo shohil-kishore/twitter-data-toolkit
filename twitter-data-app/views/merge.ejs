@@ -1,0 +1,19 @@
+<% include ./partials/header.ejs %>
+<html>
+  <body>
+    <div class="container">
+      <div style="padding: 40px;" class="display-4 text-center">
+        Data Merger
+      </div>
+
+      <form action="/merge" method="POST">
+        <input
+          class="btn btn-primary"
+          type="submit"
+          name="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+  </body>
+</html>

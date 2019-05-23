@@ -72,7 +72,7 @@ router.post("/collect", (req, res) => {
       );
       // Writes JSON response to file.
       fs.writeFile(
-        "response-" + (index + 1) + "-" + start + ".json",
+        "data/response-" + (index + 1) + "-" + start + ".json",
         json,
         "utf8",
         err => {
