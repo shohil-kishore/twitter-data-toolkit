@@ -13,6 +13,7 @@ var maxTweets;
 var maxRequests;
 var query;
 var nextToken;
+// var successMessage;
 
 // Pass through variables to GET route.
 router.get("/collect", (req, res) => {
@@ -24,6 +25,7 @@ router.get("/collect", (req, res) => {
     maxRequests: maxRequests,
     maxTweets: maxTweets,
     query: query
+    // successMessage: successMessage
   });
 });
 
@@ -79,8 +81,10 @@ router.post("/collect", (req, res) => {
           }
         }
       );
-      // Exits loop if next token is not returned.
+      // Exits loop if next token is not returned. Adds sucess message.
       if (index > 0 && !nextToken) {
+        // successMessage =
+        //   "Success! Data collection is complete. You can now proceed to merging the data.";
         return;
       }
     }
