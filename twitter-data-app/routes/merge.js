@@ -26,7 +26,7 @@ router.post("/merge", (req, res) => {
       let raw = fs.readFileSync(files[i]);
       let json = JSON.parse(raw);
       // Remove characters that invalidate JSON format.
-      let processedData = JSON.stringify(json)
+      let processedData = JSON.stringify(json.results)
         .substr(1)
         .slice(0, -1);
       // Add characters that validate JSON format.
