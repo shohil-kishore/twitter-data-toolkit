@@ -6,11 +6,6 @@ var request = require("request");
 // Define variables used in multiple routes.
 var bearerToken;
 
-// Homepage route.
-router.get("/", (req, res) => {
-  res.redirect("generate");
-});
-
 // Pass through token.
 router.get("/generate", (req, res) => {
   res.render("generate", {

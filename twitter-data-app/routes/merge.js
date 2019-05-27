@@ -5,6 +5,15 @@ const fs = require("fs-extra");
 const methodOverride = require("method-override");
 router.use(methodOverride("_method"));
 
+// Homepage route.
+router.get("/", (req, res) => {
+  // Remove Git files.
+  fs.unlink("../data/.gitkeep", err => {});
+  fs.unlink("../backup-data/.gitkeep", err => {});
+  // Redirect to Generate page.
+  res.redirect("generate");
+});
+
 // Merge GET route.
 router.get("/merge", (req, res) => {
   res.render("merge");
@@ -61,8 +70,6 @@ router.delete("/merge", (req, res) => {
   });
   res.redirect("/merge");
 });
-
-// Output location of complete file.
 
 // Export to App.
 module.exports = router;
