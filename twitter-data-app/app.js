@@ -1,6 +1,9 @@
+// Import relevant packages.
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
 
 // Setup EJS view engine and body parser (for responses).
 app.set("view engine", "ejs");
@@ -14,7 +17,7 @@ app.use(collectRoutes);
 app.use(generateRoutes);
 app.use(mergeRoutes);
 
-// Running on port 8080.
+// Listen on Port 8080.
 app.listen(8080, () => {
   console.log("Server is running on port 8080");
 });

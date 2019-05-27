@@ -2,6 +2,8 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs-extra");
+const methodOverride = require("method-override");
+router.use(methodOverride("_method"));
 
 // Merge GET route.
 router.get("/merge", (req, res) => {
@@ -42,9 +44,22 @@ router.post("/merge", (req, res) => {
         if (err) throw err;
       });
     }
-    console.log("Complete data file generated successfully.");
+    console.log(
+      "Data merged successfully. Safely store 'result.json' before clearing data."
+    );
     res.render("merge");
   }
+});
+
+router.delete("/merge", (req, res) => {
+  // Clears results.json file and empties data directory.
+  fs.writeFile("result.json", "", () => {
+    fs.emptyDir("../data/");
+    console.log(
+      "Merged data file cleared and data directory emptied successfully. Data is still available in the 'backup-data' directory."
+    );
+  });
+  res.redirect("/merge");
 });
 
 // Output location of complete file.

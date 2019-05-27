@@ -1,6 +1,6 @@
 # Twitter Data Toolkit
 
-'twitter-data-app' is a Node project that allows users to identify their bearer token (application-only authentication), collect Tweets using Twitter's premium search endpoints and aggregate Tweets into one JSON file for analysis purposes WITHOUT having to interact with code. Everything's done through a simple web application.
+'twitter-data-app' is a Node.js project that allows users to identify their bearer token (application-only authentication), collect Tweets using Twitter's premium search endpoints and aggregate Tweets into one JSON file for analysis purposes WITHOUT having to interact with code. Everything's done through a simple web application.
 
 ![Screenshot](https://raw.githubusercontent.com/shohil-kishore/twitter-data-collector/master/Other/Data%20Toolkit%20Example.png)
 

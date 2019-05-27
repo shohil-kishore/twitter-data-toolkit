@@ -61,7 +61,7 @@ router.post("/collect", (req, res) => {
     maxRequests
   ) {
     for (let index = 0; index < Number(maxRequests); index++) {
-      // Insert request parameters.
+      // Insert request parameters and await response.
       var json = await generateRequest(
         token,
         start,
@@ -70,7 +70,7 @@ router.post("/collect", (req, res) => {
         maxTweets,
         query
       );
-      // Writes JSON response to file.
+      // Writes JSON response to file, both data and backup directory.
       fs.writeFile(
         "../data/response-" + (index + 1) + "-" + start + ".json",
         json,
@@ -81,13 +81,25 @@ router.post("/collect", (req, res) => {
           }
         }
       );
-      // Exits loop if next token is not returned. Adds sucess message.
+      fs.writeFile(
+        "../backup-data/response-" + (index + 1) + "-" + start + ".json",
+        json,
+        "utf8",
+        err => {
+          if (err) {
+            console.log(err);
+          }
+        }
+      );
+      // Exits loop if next token is not returned.
       if (index > 0 && !nextToken) {
         // successMessage =
         //   "Success! Data collection is complete. You can now proceed to merging the data.";
+        console.log("Data collection complete.");
         return;
       }
     }
+    console.log("Data collection complete. Data exceeded request limitations.");
   }
 
   // Compiles and sends the request as a Promise.
@@ -136,7 +148,6 @@ router.post("/collect", (req, res) => {
             // Returns blank, exiting for loop if no more requests to be made.
             if (body.next) {
               nextToken = body.next;
-              console.log(nextToken);
             } else {
               nextToken = "";
             }
