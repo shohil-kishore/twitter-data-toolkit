@@ -13,7 +13,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
-    "fs-extra": "^8.0.1",
+    "fs-extra": "^8.1.0",
     "json-concat": "0.0.1",
     "json-merger": "^1.1.0",
     "method-override": "^3.0.0",
