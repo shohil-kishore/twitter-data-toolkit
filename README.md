@@ -4,7 +4,7 @@
 
 ![Screenshot](https://raw.githubusercontent.com/shohil-kishore/twitter-data-collector/master/Other/Data%20Toolkit%20Example.png)
 
-## Please reference: Kishore, S., Peko, G., & Sundaram, D. (2019). Looking Through the Twitter Glass: Bridging the Data–Researcher Gap. AMCIS 2019 Proceedings.
+### Please reference: Kishore, S., Peko, G., & Sundaram, D. (2019). Looking Through the Twitter Glass: Bridging the Data–Researcher Gap. AMCIS 2019 Proceedings.
 
 # FAQ
 
