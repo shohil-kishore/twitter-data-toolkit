@@ -11,7 +11,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "ejs": "^2.6.2",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
     "fs-extra": "^8.1.0",
     "json-concat": "0.0.1",
