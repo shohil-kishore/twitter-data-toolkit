@@ -7,6 +7,15 @@
 ## Reference 
 Kishore, S., Peko, G., & Sundaram, D. (2019). Looking Through the Twitter Glass: Bridging the Data – Researcher Gap. AMCIS 2019 Proceedings.
 
+# Instructions (Windows/Linux/macOS)
+
+1. Apply for a Twitter Developer account (https://developer.twitter.com/en/apply-for-access.html).
+2. On approval, create an app under "Apps" and a development environment under "Dev environments", either 30-day or full-archive depending on your needs (https://developer.twitter.com/en/docs/basics/apps/overview).
+3. Download and install Node.js (https://nodejs.org/en/download/).
+4. If you have a GitHub account, clone or fork this project. If you don't have a GitHub account, click the green "Clone or download" button and download the ZIP file.
+5. From the command line, change directory into "twitter-data-app" and type "npm start" to start the application. 
+6. Finally, in a web browser, type in "localhost:8080" to access the web application.
+
 # FAQ
 
 ## How is this different to other projects?
@@ -20,3 +29,5 @@ Utilizing Twitter's Premium Search API is particularly useful in a research cont
 ## How much does it cost to use the Twitter API?
 
 For \$99 USD, 100,000 Tweets can be collected using the Premium Search full-archive endpoint.
+
+
