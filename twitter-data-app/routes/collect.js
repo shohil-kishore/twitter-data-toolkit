@@ -95,11 +95,15 @@ router.post("/collect", (req, res) => {
       if (index > 0 && !nextToken) {
         // successMessage =
         //   "Success! Data collection is complete. You can now proceed to merging the data.";
-        console.log("Data collection complete.");
+        console.log(
+          "Data collection complete. Data did not exceed request limitations."
+        );
         return;
       }
     }
-    console.log("Data collection complete. Data exceeded request limitations.");
+    console.log(
+      "Data collection complete, however, data exceeded request limitations."
+    );
   }
 
   // Compiles and sends the request as a Promise.
