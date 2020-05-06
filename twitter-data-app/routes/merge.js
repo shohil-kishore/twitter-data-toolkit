@@ -48,10 +48,9 @@ router.post("/merge", (req, res) => {
       } else {
         processedData = processedData + ",";
       }
-      // Append to an existing file. File should be cleared at some stage.
-      fs.appendFile("result.json", processedData, err => {
-        if (err) throw err;
-      });
+      // Streams to an existing file. Works best with individual responses, do not combine multiple times. File should be cleared/removed at some stage.
+      let writer = fs.createWriteStream("result.json", { flags: "a" });
+      writer.write(processedData);
     }
     console.log(
       "Data merged successfully. Safely store 'result.json' before clearing data."
