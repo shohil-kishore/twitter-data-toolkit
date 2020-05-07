@@ -16,6 +16,7 @@
     "fs-extra": "^8.1.0",
     "json-concat": "0.0.1",
     "json-merger": "^1.1.1",
+    "junk": "^3.1.0",
     "method-override": "^3.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"

@@ -9,7 +9,7 @@ var bearerToken;
 // Pass through token.
 router.get("/generate", (req, res) => {
   res.render("generate", {
-    bearerToken: bearerToken
+    bearerToken: bearerToken,
   });
 });
 
@@ -45,14 +45,14 @@ router.post("/generate", (req, res) => {
       url: "https://api.twitter.com/oauth2/token",
       headers: {
         Authorization: "Basic " + encodedKey,
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
       },
-      body: "grant_type=client_credentials"
+      body: "grant_type=client_credentials",
     };
 
     // Submit request then parse body and resolve Promise.
     return new Promise((resolve, reject) => {
-      request.post(options, function(err, res, body) {
+      request.post(options, function (err, res, body) {
         json = JSON.parse(body);
         resolve(json);
       });

@@ -8,8 +8,8 @@ router.use(methodOverride("_method"));
 // Homepage route.
 router.get("/", (req, res) => {
   // Remove Git files.
-  fs.unlink("../data/.gitkeep", err => {});
-  fs.unlink("../backup-data/.gitkeep", err => {});
+  fs.unlink("../data/.gitkeep", (err) => {});
+  fs.unlink("../backup-data/.gitkeep", (err) => {});
   // Redirect to Generate page.
   res.redirect("generate");
 });
@@ -28,18 +28,18 @@ router.post("/merge", (req, res) => {
     // Generate array of paths to JSON files to use for processing.
     var files = [];
     var dir = "../data/";
-    fs.readdirSync(dir).forEach(file => {
+    fs.readdirSync(dir).forEach((file) => {
       files.push(dir + file);
     });
+    files = files.filter((e) => e !== "../data/.DS_Store");
+    console.log(files);
 
     // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
     for (let i = 0; i < files.length; i++) {
       let raw = fs.readFileSync(files[i]);
       let json = JSON.parse(raw);
       // Remove characters that invalidate JSON format.
-      let processedData = JSON.stringify(json.results)
-        .substr(1)
-        .slice(0, -1);
+      let processedData = JSON.stringify(json.results).substr(1).slice(0, -1);
       // Add characters that validate JSON format.
       if (i === 0) {
         processedData = "[" + processedData + ",";

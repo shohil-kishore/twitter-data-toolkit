@@ -24,7 +24,7 @@ router.get("/collect", (req, res) => {
     endpoint: endpoint,
     maxRequests: maxRequests,
     maxTweets: maxTweets,
-    query: query
+    query: query,
     // successMessage: successMessage
   });
 });
@@ -75,7 +75,7 @@ router.post("/collect", (req, res) => {
         "../data/response-" + (index + 1) + "-" + start + ".json",
         json,
         "utf8",
-        err => {
+        (err) => {
           if (err) {
             console.log(err);
           }
@@ -85,7 +85,7 @@ router.post("/collect", (req, res) => {
         "../backup-data/response-" + (index + 1) + "-" + start + ".json",
         json,
         "utf8",
-        err => {
+        (err) => {
           if (err) {
             console.log(err);
           }
@@ -120,7 +120,7 @@ router.post("/collect", (req, res) => {
         query: completedQuery,
         maxResults: maxTweets,
         fromDate: start,
-        toDate: finish
+        toDate: finish,
       };
     } else if (nextToken) {
       queryObject = {
@@ -128,12 +128,12 @@ router.post("/collect", (req, res) => {
         maxResults: maxTweets,
         fromDate: start,
         toDate: finish,
-        next: nextToken
+        next: nextToken,
       };
     }
 
     // Return request as a Promise (required for async/await).
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       request(
         {
           url: url,
@@ -141,8 +141,8 @@ router.post("/collect", (req, res) => {
           json: true,
           headers: {
             Authorization: bearerToken,
-            "Content-Type": "application/json"
-          }
+            "Content-Type": "application/json",
+          },
         },
         // Saves the next token for further processing. Returns the response in a JSON format.
         (err, res, body) => {
