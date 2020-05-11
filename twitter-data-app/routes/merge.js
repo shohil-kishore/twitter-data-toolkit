@@ -8,8 +8,8 @@ router.use(methodOverride("_method"));
 // Homepage route.
 router.get("/", (req, res) => {
   // Remove Git files.
-  fs.unlink("../data/.gitkeep", (err) => {});
-  fs.unlink("../backup-data/.gitkeep", (err) => {});
+  fs.unlink("../data/.gitkeep", (err) => { });
+  fs.unlink("../backup-data/.gitkeep", (err) => { });
   // Redirect to Generate page.
   res.redirect("generate");
 });
@@ -31,8 +31,8 @@ router.post("/merge", (req, res) => {
     fs.readdirSync(dir).forEach((file) => {
       files.push(dir + file);
     });
-    files = files.filter((e) => e !== "../data/.DS_Store");
     console.log(files);
+    console.log(files.length);
 
     // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
     for (let i = 0; i < files.length; i++) {
@@ -48,7 +48,7 @@ router.post("/merge", (req, res) => {
       } else {
         processedData = processedData + ",";
       }
-      // Streams to an existing file. Works best with individual responses, do not combine multiple times. File should be cleared/removed at some stage.
+      // Append to an existing file. File should be cleared at some stage.
       let writer = fs.createWriteStream("result.json", { flags: "a" });
       writer.write(processedData);
     }
