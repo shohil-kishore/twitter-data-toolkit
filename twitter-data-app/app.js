@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect routes.
 const collectRoutes = require("./routes/collect.js");
-const countRoutes = require("./routes/collect.js");
+const countRoutes = require("./routes/count.js");
 const generateRoutes = require("./routes/generate.js");
 const mergeRoutes = require("./routes/merge.js");
 app.use(collectRoutes);
