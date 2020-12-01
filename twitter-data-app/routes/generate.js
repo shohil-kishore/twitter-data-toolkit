@@ -21,13 +21,18 @@ router.post("/generate", (req, res) => {
 
   // Async function that awaits for response from Twitter API.
   async function saveToken(consumerKey, consumerSecretKey) {
-    // Generate token.
-    var json = await generateToken(consumerKey, consumerSecretKey);
+    try {
+      // Generate token.
+      var json = await generateToken(consumerKey, consumerSecretKey);
+      console.log(json);
+    } catch (err) {
+      console.log(err);
+    }
     // Return key or handle the error.
     if (json.token_type === "bearer") {
       bearerToken = "Success! Copy the token below: " + json.access_token;
     } else {
-      bearerToken = "Sorry, something went wrong. Here's the error: " + err;
+      bearerToken = "Error! You may have pasted in the wrong keys.";
     }
     // Redirect to refreshed page.
     res.redirect("/generate");
@@ -53,8 +58,12 @@ router.post("/generate", (req, res) => {
     // Submit request then parse body and resolve Promise.
     return new Promise((resolve, reject) => {
       request.post(options, function (err, res, body) {
-        json = JSON.parse(body);
-        resolve(json);
+        if (err) {
+          reject(err);
+        } else {
+          json = JSON.parse(body);
+          resolve(json);
+        }
       });
     });
   }
