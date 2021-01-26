@@ -2,30 +2,38 @@
 <html>
   <body>
     <div class="container">
-      <div style="padding: 40px;" class="display-4 text-center">
-        Data Merger
-      </div>
+      <div style="padding: 40px" class="display-4 text-center">Data Merger</div>
       <p>
         Once data collection is complete, click the Merge Data button to
         generate a single JSON file containing all data. Only click Merge Data
         once otherwise you will have duplicate data. Once you've saved the
         results file, make sure to click Clear Data to reset the application.
       </p>
-      <div style="width:50%; margin:auto;">
-        <form action="/merge" method="POST" class="text-center">
+      <div style="width: 50%; margin: auto">
+        <form action="/merge-json" method="POST" class="text-center">
           <input
             class="btn text-center btn-primary"
             type="submit"
             name="submit"
-            value="Merge Data"
+            value="Merge JSON"
+          />
+        </form>
+
+        <form action="/merge-csv" method="POST" class="text-center">
+          <input
+            class="btn text-center btn-primary"
+            type="submit"
+            name="submit"
+            style="margin-top: 10px"
+            value="Merge CSV"
           />
         </form>
 
         <form
-          action="/merge?_method=DELETE"
+          action="/merge-json?_method=DELETE"
           method="POST"
           class="text-center"
-          style="margin-top: 10px;"
+          style="margin-top: 10px"
         >
           <input
             class="btn text-center btn-danger"
