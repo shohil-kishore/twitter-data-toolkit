@@ -3,6 +3,17 @@
   <body>
     <div class="container">
       <div style="padding: 40px" class="display-4 text-center">Data Merger</div>
+
+      <% if (success !== undefined) { %>
+      <div
+        style="text-align: center; padding-bottom: 0%"
+        class="alert alert-info overflow-auto"
+        role="alert"
+      >
+        <p><%= msg %></p>
+      </div>
+      <% } %>
+
       <p>
         Once data collection is complete, click the Merge Data button to
         generate a single JSON file containing all data. Only click Merge Data
@@ -10,7 +21,7 @@
         results file, make sure to click Clear Data to reset the application.
       </p>
       <div style="width: 50%; margin: auto">
-        <form action="/merge-json" method="POST" class="text-center">
+        <form action="/merge/json" method="POST" class="text-center">
           <input
             class="btn text-center btn-primary"
             type="submit"
@@ -19,7 +30,7 @@
           />
         </form>
 
-        <form action="/merge-csv" method="POST" class="text-center">
+        <form action="/merge/csv" method="POST" class="text-center">
           <input
             class="btn text-center btn-primary"
             type="submit"

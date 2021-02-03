@@ -32,7 +32,7 @@ router.post("/generate", (req, res) => {
     if (json.token_type === "bearer") {
       bearerToken = "Success! Copy the token below: " + json.access_token;
     } else {
-      bearerToken = "Error! You may have pasted in the wrong keys.";
+      bearerToken = "Error: Ensure both fields are complete and correct.";
     }
     // Redirect to refreshed page.
     res.redirect("/generate");

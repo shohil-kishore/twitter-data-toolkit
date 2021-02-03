@@ -8,19 +8,39 @@ router.use(methodOverride("_method"));
 // Homepage route.
 router.get("/", (req, res) => {
   // Remove Git files.
-  fs.unlink("../data/.gitkeep", (err) => { });
-  fs.unlink("../backup-data/.gitkeep", (err) => { });
+  fs.unlink("../data/.gitkeep", (err) => {});
+  fs.unlink("../backup-data/.gitkeep", (err) => {});
   // Redirect to Generate page.
   res.redirect("generate");
 });
 
+// Define variables used in multiple routes.
+var success;
+var msg;
+
+function successMsg(type) {
+  // Return key or handle the error.
+  success = true;
+  if (success === true) {
+    msg =
+      "Data merged successfully! Safely store 'result." +
+      type +
+      "' before clearing data.";
+  } else {
+    msg = "Error, please try again.";
+  }
+}
+
 // Merge GET route.
 router.get("/merge", (req, res) => {
-  res.render("merge");
+  res.render("merge", {
+    success: success,
+    msg: msg,
+  });
 });
 
 // Merge POST route.
-router.post("/merge", (req, res) => {
+router.post("/merge/json", (req, res) => {
   mergeAndDeleteFiles();
 
   // Merge files in the correct format.
@@ -52,10 +72,48 @@ router.post("/merge", (req, res) => {
       let writer = fs.createWriteStream("result.json", { flags: "a" });
       writer.write(processedData);
     }
-    console.log(
-      "Data merged successfully. Safely store 'result.json' before clearing data."
-    );
-    res.render("merge");
+    // Triggers success alert on client side.
+    successMsg("json");
+    res.redirect("/merge");
+  }
+});
+
+// Merge POST route.
+router.post("/merge/csv", (req, res) => {
+  mergeAndDeleteFiles();
+
+  // Merge files in the correct format.
+  function mergeAndDeleteFiles() {
+    // Generate array of paths to JSON files to use for processing.
+    var files = [];
+    var dir = "../data/";
+    fs.readdirSync(dir).forEach((file) => {
+      files.push(dir + file);
+    });
+    console.log(files);
+    console.log(files.length);
+
+    // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
+    for (let i = 0; i < files.length; i++) {
+      let raw = fs.readFileSync(files[i]);
+      let json = JSON.parse(raw);
+      // Remove characters that invalidate JSON format.
+      let processedData = JSON.stringify(json.results).substr(1).slice(0, -1);
+      // Add characters that validate JSON format.
+      if (i === 0) {
+        processedData = "[" + processedData + ",";
+      } else if (i === files.length - 1) {
+        processedData = processedData + "]";
+      } else {
+        processedData = processedData + ",";
+      }
+      // Append to an existing file. File should be cleared at some stage.
+      let writer = fs.createWriteStream("result.json", { flags: "a" });
+      writer.write(processedData);
+    }
+    // Triggers success alert on client side.
+    successMsg("csv");
+    res.redirect("/merge");
   }
 });
 
