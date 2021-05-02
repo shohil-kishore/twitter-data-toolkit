@@ -8,8 +8,8 @@ router.use(methodOverride("_method"));
 // Homepage route.
 router.get("/", (req, res) => {
   // Remove Git files.
-  fs.unlink("../data/.gitkeep", (err) => { });
-  fs.unlink("../backup-data/.gitkeep", (err) => { });
+  fs.unlink("../data/.gitkeep", (err) => {});
+  fs.unlink("../backup-data/.gitkeep", (err) => {});
   // Redirect to Generate page.
   res.redirect("generate");
 });
@@ -39,7 +39,7 @@ router.post("/merge", (req, res) => {
       let raw = fs.readFileSync(files[i]);
       let json = JSON.parse(raw);
       // Remove characters that invalidate JSON format.
-      let processedData = JSON.stringify(json.results).substr(1).slice(0, -1);
+      let processedData = JSON.stringify(json.data).substr(1).slice(0, -1);
       // Add characters that validate JSON format.
       if (i === 0) {
         processedData = "[" + processedData + ",";

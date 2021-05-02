@@ -13,7 +13,6 @@ var maxTweets;
 var maxRequests;
 var query;
 var nextToken;
-// var successMessage;
 
 // Pass through variables to GET route.
 router.get("/collect", (req, res) => {
@@ -25,7 +24,6 @@ router.get("/collect", (req, res) => {
     maxRequests: maxRequests,
     maxTweets: maxTweets,
     query: query,
-    // successMessage: successMessage
   });
 });
 
@@ -118,17 +116,37 @@ router.post("/collect", (req, res) => {
     if (!nextToken) {
       queryObject = {
         query: completedQuery,
-        maxResults: maxTweets,
-        fromDate: start,
-        toDate: finish,
+        "tweet.fields":
+          "attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,public_metrics,possibly_sensitive,referenced_tweets,reply_settings,source,text,withheld",
+        "user.fields":
+          "created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld",
+        "place.fields":
+          "contained_within,country,country_code,full_name,geo,id,name,place_type",
+        "media.fields":
+          "duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics",
+        expansions:
+          "attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id",
+        max_results: maxTweets,
+        start_time: start,
+        end_time: finish,
       };
     } else if (nextToken) {
       queryObject = {
         query: completedQuery,
-        maxResults: maxTweets,
-        fromDate: start,
-        toDate: finish,
-        next: nextToken,
+        max_results: maxTweets,
+        "tweet.fields":
+          "attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,public_metrics,possibly_sensitive,referenced_tweets,reply_settings,source,text,withheld",
+        "user.fields":
+          "created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld",
+        "place.fields":
+          "contained_within,country,country_code,full_name,geo,id,name,place_type",
+        "media.fields":
+          "duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics",
+        expansions:
+          "attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id",
+        start_time: start,
+        end_time: finish,
+        next_token: nextToken,
       };
     }
 
@@ -142,6 +160,7 @@ router.post("/collect", (req, res) => {
           headers: {
             Authorization: bearerToken,
             "Content-Type": "application/json",
+            "User-Agent": "v2FullArchiveJS",
           },
         },
         // Saves the next token for further processing. Returns the response in a JSON format.
@@ -150,8 +169,8 @@ router.post("/collect", (req, res) => {
             console.log(err);
           } else if (res && body) {
             // Returns blank, exiting for loop if no more requests to be made.
-            if (body.next) {
-              nextToken = body.next;
+            if (body.meta.next_token) {
+              nextToken = body.meta.next_token;
             } else {
               nextToken = "";
             }
