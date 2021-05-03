@@ -8,14 +8,15 @@
 
 If you use this software, please reference: [Kishore, S., Peko, G., & Sundaram, D. (2019). Looking Through the Twitter Glass: Bridging the Data – Researcher Gap. Paper presented at the Americas Conference on Information Systems (AMCIS) 2019, Cancun, Mexico.](https://aisel.aisnet.org/amcis2019/social_computing/social_computing/4/)
 
-# Instructions (Windows/Linux/macOS)
+# Instructions for Academics (Windows/Linux/macOS)
 
-1. Apply for a Twitter Developer account (https://developer.twitter.com/en/apply-for-access.html).
-2. On approval, create an app under "Apps" and a development environment under "Dev environments", either 30-day or full-archive depending on your needs (https://developer.twitter.com/en/docs/basics/apps/overview).
+1. Apply for access to the Academic Research product track (https://developer.twitter.com/en/solutions/academic-research/products-for-researchers).
+2. On approval, create an app under "Apps" (https://developer.twitter.com/en/docs/projects/overview).
 3. Download and install Node.js (https://nodejs.org/en/download/).
 4. If you have a GitHub account, clone or fork this project. If you don't have a GitHub account, click the green "Clone or download" button and download the ZIP file.
-5. From the command line, change directory into "twitter-data-app", type "npm install" to install dependencies, then "npm start" to start the application.
-6. Finally, in a web browser, type in "localhost:8080" to access the web application and start collecting data! 🎉
+5. From the command line, change directory into "twitter-data-toolkit" and type in "git checkout v2-api" to use the latest version of the toolkit.
+6. Then, change directory into "twitter-data-app", type "npm install" to install dependencies, and "npm start" to start the application.
+7. Finally, in a web browser, type in "localhost:8080" to access the web application and start collecting data! 🎉
 
 # FAQ
 
