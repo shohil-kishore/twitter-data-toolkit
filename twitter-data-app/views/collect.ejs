@@ -46,12 +46,12 @@
 
         <div class="form-group">
           <label for="privateKey">Fields and Expansions</label>
-          <select multiple class="form-control active" id="fields">
-            <option selected>Tweet</option>
-            <option selected>User</option>
-            <option selected>Place</option>
-            <option selected>Media</option>
-            <option selected>Expansions</option>
+          <select multiple class="form-control active" name="fields">
+            <option value="tweet" selected>Tweet</option>
+            <option value="user"selected>User</option>
+            <option value="place" selected>Place</option>
+            <option value="media" selected>Media</option>
+            <option value="expansions" selected>Expansions</option>
           </select>
           <small id="publicKeyHelp" class="form-text text-muted"> <a href="https://developer.twitter.com/en/docs/twitter-api/fields">Fields</a> and <a href="https://developer.twitter.com/en/docs/twitter-api/expansions">Expansions</a> allow you to select just the data you want. We recommend selecting all the above options while carrying out data exploration.</small>
         </div>

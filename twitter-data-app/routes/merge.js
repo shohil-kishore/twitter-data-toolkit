@@ -10,6 +10,8 @@ router.get("/", (req, res) => {
   // Remove Git files.
   fs.unlink("../data/.gitkeep", (err) => {});
   fs.unlink("../backup-data/.gitkeep", (err) => {});
+  fs.unlink("../data/.DS_Store", (err) => {});
+  fs.unlink("../backup-data/.DS_Store", (err) => {});
   // Redirect to Generate page.
   res.redirect("generate");
 });
