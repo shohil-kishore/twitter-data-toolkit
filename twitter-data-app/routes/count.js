@@ -9,7 +9,7 @@ var token;
 var start;
 var finish;
 var endpoint;
-var bucket;
+var granularity;
 var maxRequests;
 var query;
 var nextToken;
@@ -22,7 +22,7 @@ router.get("/count", (req, res) => {
     finish: finish,
     endpoint: endpoint,
     maxRequests: maxRequests,
-    bucket: bucket,
+    granularity: granularity,
     query: query,
   });
 });
@@ -33,12 +33,12 @@ router.post("/count", (req, res) => {
   start = req.body.start;
   finish = req.body.finish;
   endpoint = req.body.endpoint;
-  bucket = req.body.bucket;
+  granularity = req.body.granularity;
   maxRequests = req.body.maxRequests;
   query = req.body.query;
 
   // Call count function.
-  countAndSave(token, start, finish, endpoint, bucket, query, maxRequests);
+  countAndSave(token, start, finish, endpoint, granularity, query, maxRequests);
 
   // Async function awaits for each response from the Twitter API. Makes multiple requests based on a user-defined limit (maxRequests). Generates a JSON file containing each response.
   async function countAndSave(
@@ -46,7 +46,7 @@ router.post("/count", (req, res) => {
     start,
     finish,
     endpoint,
-    bucket,
+    granularity,
     query,
     maxRequests
   ) {
@@ -57,7 +57,7 @@ router.post("/count", (req, res) => {
         start,
         finish,
         endpoint,
-        bucket,
+        granularity,
         query
       );
       // Writes JSON response to file, both data and backup directory.
@@ -86,7 +86,7 @@ router.post("/count", (req, res) => {
         // successMessage =
         //   "Success! Data collection is complete. You can now proceed to merging the data.";
         console.log(
-          "Count data collection complete. Data did not exceed request limitations."
+          "Error: Data collection incomplete. If there was an error, it will be logged below. If nothing is logged, data exceeded request limitations."
         );
         return;
       }
@@ -97,7 +97,7 @@ router.post("/count", (req, res) => {
   }
 
   // Compiles and sends the request as a Promise.
-  function generateRequest(token, start, finish, endpoint, bucket, query) {
+  function generateRequest(token, start, finish, endpoint, granularity, query) {
     // Setup variables.
     const url = endpoint + "?";
     const completedQuery = "(" + query + ")";
@@ -108,16 +108,16 @@ router.post("/count", (req, res) => {
     if (!nextToken) {
       queryObject = {
         query: completedQuery,
-        bucket: bucket,
-        fromDate: start,
-        toDate: finish,
+        granularity: granularity,
+        start_time: start,
+        end_time: finish,
       };
     } else if (nextToken) {
       queryObject = {
         query: completedQuery,
-        bucket: bucket,
-        fromDate: start,
-        toDate: finish,
+        granularity: granularity,
+        start_time: start,
+        end_time: finish,
         next: nextToken,
       };
     }
@@ -132,6 +132,7 @@ router.post("/count", (req, res) => {
           headers: {
             Authorization: bearerToken,
             "Content-Type": "application/json",
+            "User-Agent": "v2FullArchiveJS",
           },
         },
         // Saves the next token for further processing. Returns the response in a JSON format.
@@ -140,7 +141,10 @@ router.post("/count", (req, res) => {
             console.log(err);
           } else if (res && body) {
             // Returns blank, exiting for loop if no more requests to be made.
-            if (body.next) {
+            if (body.errors) {
+              console.log("There was an error with your request, check below:");
+              console.log(body.errors);
+            } else if (body.next) {
               nextToken = body.next;
             } else {
               nextToken = "";

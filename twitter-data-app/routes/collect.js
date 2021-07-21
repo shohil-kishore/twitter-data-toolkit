@@ -100,13 +100,13 @@ router.post("/collect", (req, res) => {
         // successMessage =
         //   "Success! Data collection is complete. You can now proceed to merging the data.";
         console.log(
-          "Data collection complete. Data did not exceed request limitations."
+          "Success! Data collection complete. Data did not exceed request limitations."
         );
         return;
       }
     }
     console.log(
-      "Data collection complete, however, data exceeded request limitations."
+      "Error: Data collection incomplete. If there was an error, it will be printed below. If nothing is printed, data exceeded request limitations."
     );
   }
 
@@ -144,19 +144,21 @@ router.post("/collect", (req, res) => {
       // Changes fields if selected.
       function selectFields(i) {
         if (fields[i] === "tweet") {
-          console.log("Tweet");
+          // console.log("Tweet");
           tweetFields =
-            "attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,public_metrics,possibly_sensitive,referenced_tweets,reply_settings,source,text,withheld";
+            // "attachments,author_id,context_annotations,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,public_metrics,possibly_sensitive,referenced_tweets,reply_settings,source,text,withheld";
+            // Removed context annotations as that was limited to 100 responses.
+            "attachments,author_id,conversation_id,created_at,entities,geo,id,in_reply_to_user_id,lang,public_metrics,possibly_sensitive,referenced_tweets,reply_settings,source,text,withheld";
         } else if (fields[i] === "user") {
-          console.log("User");
+          // console.log("User");
           userFields =
             "created_at,description,entities,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified,withheld";
         } else if (fields[i] === "place") {
-          console.log("Place");
+          // console.log("Place");
           placeFields =
             "contained_within,country,country_code,full_name,geo,id,name,place_type";
         } else if (fields[i] === "media") {
-          console.log("Media");
+          // console.log("Media");
           mediaFields =
             "duration_ms,height,media_key,preview_image_url,type,url,width,public_metrics";
         }
@@ -209,9 +211,15 @@ router.post("/collect", (req, res) => {
           if (err) {
             console.log(err);
           } else if (res && body) {
+            // console.log(body.meta); Check if there are errors with next_token being undefined.
             // Returns blank, exiting for loop if no more requests to be made.
-            if (body.meta.next_token) {
+            if (body.errors) {
+              console.log("There was an error with your request, check below:");
+              console.log(body.errors);
+            } else if (body.meta.next_token) {
               nextToken = body.meta.next_token;
+            } else if (body.errors) {
+              console.log(body.errors);
             } else {
               nextToken = "";
             }

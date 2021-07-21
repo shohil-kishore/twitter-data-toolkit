@@ -4,7 +4,7 @@
     <div class="container">
 
       <div style="padding: 40px;" class="display-4 text-center">
-        Count Data Collector (Beta)
+        Count Data Collector (API v2 Beta)
       </div>
 
       <form action="/count" method="POST">
@@ -29,8 +29,8 @@
           <small id="publicKeyHelp" class="form-text text-muted">Enter the name of your development environment where it says "YourEnvironment".</small>
         </div>
         <div class="form-group">
-          <label for="privateKey">Timeframe</label>
-          <input type="text" class="form-control" name="bucket" value="500"/>
+          <label for="privateKey">Granularity</label>
+          <input type="text" class="form-control" name="granularity" value="day"/>
           <small id="publicKeyHelp" class="form-text text-muted">Enter a unit of time such as "day", "hour" or "minute" to generate an estimate.</small>
         </div>
         <div class="form-group">
