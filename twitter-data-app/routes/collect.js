@@ -106,7 +106,7 @@ router.post("/collect", (req, res) => {
       }
     }
     console.log(
-      "Error: Data collection incomplete. If there was an error, it will be printed below. If nothing is printed, data exceeded request limitations."
+      "Error: Data collection incomplete. If there was an error, it will be logged below. If nothing is logged, data exceeded request limitations."
     );
   }
 

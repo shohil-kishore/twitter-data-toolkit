@@ -14,10 +14,12 @@ const collectRoutes = require("./routes/collect.js");
 const countRoutes = require("./routes/count.js");
 const generateRoutes = require("./routes/generate.js");
 const mergeRoutes = require("./routes/merge.js");
+const lookupRoutes = require("./routes/lookup.js");
 app.use(collectRoutes);
 app.use(countRoutes);
 app.use(generateRoutes);
 app.use(mergeRoutes);
+app.use(lookupRoutes);
 
 // Listen on Port 8080.
 app.listen(8080, () => {

@@ -6,63 +6,42 @@ const request = require("request");
 
 // Define variables used in multiple routes.
 var token;
-var start;
-var finish;
 var endpoint;
-var granularity;
+var maxResults;
 var maxRequests;
-var query;
+var id;
 var nextToken;
 
 // Pass through variables to GET route.
-router.get("/count", (req, res) => {
-  res.render("count", {
+router.get("/lookup", (req, res) => {
+  res.render("lookup", {
     token: token,
-    start: start,
-    finish: finish,
     endpoint: endpoint,
     maxRequests: maxRequests,
-    granularity: granularity,
-    query: query,
+    maxResults: maxResults,
+    id: id,
   });
 });
 
 // Extract form data from POST route.
-router.post("/count", (req, res) => {
+router.post("/lookup", (req, res) => {
   token = req.body.token;
-  start = req.body.start;
-  finish = req.body.finish;
   endpoint = req.body.endpoint;
-  granularity = req.body.granularity;
   maxRequests = req.body.maxRequests;
-  query = req.body.query;
+  maxResults = req.body.maxResults;
+  id = req.body.id;
 
   // Call count function.
-  countAndSave(token, start, finish, endpoint, granularity, query, maxRequests);
+  lookupAndSave(token, endpoint, maxRequests, maxResults, id);
 
   // Async function awaits for each response from the Twitter API. Makes multiple requests based on a user-defined limit (maxRequests). Generates a JSON file containing each response.
-  async function countAndSave(
-    token,
-    start,
-    finish,
-    endpoint,
-    granularity,
-    query,
-    maxRequests
-  ) {
+  async function lookupAndSave(token, endpoint, maxRequests, maxResults, id) {
     for (let index = 0; index < Number(maxRequests); index++) {
       // Insert request parameters and await response.
-      var json = await generateRequest(
-        token,
-        start,
-        finish,
-        endpoint,
-        granularity,
-        query
-      );
+      var json = await generateRequest(token, endpoint, maxResults, id);
       // Writes JSON response to file, both data and backup directory.
       fs.writeFile(
-        "../data/count-" + (index + 1) + "-" + start + ".json",
+        "../data/lookup-" + (index + 1) + "-" + id + ".json",
         json,
         "utf8",
         (err) => {
@@ -72,7 +51,7 @@ router.post("/count", (req, res) => {
         }
       );
       fs.writeFile(
-        "../backup-data/count-" + (index + 1) + "-" + start + ".json",
+        "../backup-data/lookup-" + (index + 1) + "-" + id + ".json",
         json,
         "utf8",
         (err) => {
@@ -97,28 +76,21 @@ router.post("/count", (req, res) => {
   }
 
   // Compiles and sends the request as a Promise.
-  function generateRequest(token, start, finish, endpoint, granularity, query) {
+  function generateRequest(token, endpoint, maxResults, id) {
     // Setup variables.
-    const url = endpoint + "?";
-    const completedQuery = "(" + query + ")";
+    const url = endpoint + id + "/following?";
     const bearerToken = "Bearer " + token;
     var queryObject;
 
     // Checks if nextToken is not blank.
     if (!nextToken) {
       queryObject = {
-        query: completedQuery,
-        granularity: granularity,
-        start_time: start,
-        end_time: finish,
+        max_results: maxResults,
       };
     } else if (nextToken) {
       queryObject = {
-        query: completedQuery,
-        granularity: granularity,
-        start_time: start,
-        end_time: finish,
-        next: nextToken,
+        max_results: maxResults,
+        pagination_token: nextToken,
       };
     }
 
@@ -132,7 +104,6 @@ router.post("/count", (req, res) => {
           headers: {
             Authorization: bearerToken,
             "Content-Type": "application/json",
-            "User-Agent": "v2FullArchiveJS",
           },
         },
         // Saves the next token for further processing. Returns the response in a JSON format.
@@ -144,11 +115,15 @@ router.post("/count", (req, res) => {
             if (body.errors) {
               console.log("There was an error with your request, check below:");
               console.log(body.errors);
-            } else if (body.next) {
-              nextToken = body.next;
+            } else if (body.meta.next_token) {
+              nextToken = body.meta.next_token;
             } else {
               nextToken = "";
             }
+            console.log("Token" + nextToken);
+            console.log("err" + err);
+            console.log("res" + res);
+            console.log("body" + body);
             var json = JSON.stringify(body);
             resolve(json);
           }
