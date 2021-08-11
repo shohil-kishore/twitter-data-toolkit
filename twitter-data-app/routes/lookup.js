@@ -11,6 +11,7 @@ var maxResults;
 var maxRequests;
 var id;
 var nextToken;
+var splitIDs;
 
 // Pass through variables to GET route.
 router.get("/lookup", (req, res) => {
@@ -31,17 +32,33 @@ router.post("/lookup", (req, res) => {
   maxResults = req.body.maxResults;
   id = req.body.id;
 
-  // Call count function.
-  lookupAndSave(token, endpoint, maxRequests, maxResults, id);
+  lookupAndSaveLoop(token, endpoint, maxRequests, maxResults, id);
 
-  // Async function awaits for each response from the Twitter API. Makes multiple requests based on a user-defined limit (maxRequests). Generates a JSON file containing each response.
+  // Loops over all passed IDs and awaits for each response before proceeding. Takes next_token and rate limiting into account.
+  async function lookupAndSaveLoop(
+    token,
+    endpoint,
+    maxRequests,
+    maxResults,
+    id
+  ) {
+    splitIDs = id.split(",");
+    // After splitting IDs, iterate over x requests for each ID.
+    for (const splitID of splitIDs) {
+      // Generates request and JSON file containing each response.
+      await lookupAndSave(token, endpoint, maxRequests, maxResults, splitID);
+    }
+    console.log("Done!");
+  }
+
+  // Awaits for each response. Makes multiple requests based on a user-defined limit (maxRequests). Generates a JSON file containing each response.
   async function lookupAndSave(token, endpoint, maxRequests, maxResults, id) {
-    for (let index = 0; index < Number(maxRequests); index++) {
-      // Insert request parameters and await response.
+    for (let j = 0; j < Number(maxRequests); j++) {
+      // Inserts request parameters and await response, takes rate limiting into account.
       var json = await generateRequest(token, endpoint, maxResults, id);
       // Writes JSON response to file, both data and backup directory.
       fs.writeFile(
-        "../data/lookup-" + (index + 1) + "-" + id + ".json",
+        "../data/lookup-" + (j + 1) + "-" + id + ".json",
         json,
         "utf8",
         (err) => {
@@ -51,7 +68,7 @@ router.post("/lookup", (req, res) => {
         }
       );
       fs.writeFile(
-        "../backup-data/lookup-" + (index + 1) + "-" + id + ".json",
+        "../backup-data/lookup-" + (j + 1) + "-" + id + ".json",
         json,
         "utf8",
         (err) => {
@@ -60,18 +77,18 @@ router.post("/lookup", (req, res) => {
           }
         }
       );
-      // Exits loop if next token is not returned.
-      if (index > 0 && !nextToken) {
+      // Exits loop if next_token is not returned.
+      if (j >= 0 && !nextToken) {
         // successMessage =
         //   "Success! Data collection is complete. You can now proceed to merging the data.";
         console.log(
-          "Success! Data collection complete. Data did not exceed request limitations."
+          "Success! User request did not exceed request limitations."
         );
         return;
       }
     }
     console.log(
-      "Error: Data collection incomplete. If there was an error, it will be logged below. If nothing is logged, data exceeded request limitations."
+      "Error! Data collection incomplete. If there was an error, it will be logged below. If nothing is logged, data exceeded request limitations."
     );
   }
 
@@ -96,45 +113,46 @@ router.post("/lookup", (req, res) => {
 
     // Return request as a Promise (required for async/await).
     return new Promise(function (resolve, reject) {
-      request(
-        {
-          url: url,
-          qs: queryObject,
-          json: true,
-          headers: {
-            Authorization: bearerToken,
-            "Content-Type": "application/json",
+      // Added timeout to deal with 15 requests per 15 minute window rate limiting.
+      setTimeout(() => {
+        request(
+          {
+            url: url,
+            qs: queryObject,
+            json: true,
+            headers: {
+              Authorization: bearerToken,
+              "Content-Type": "application/json",
+            },
           },
-        },
-        // Saves the next token for further processing. Returns the response in a JSON format.
-        (err, res, body) => {
-          if (err) {
-            console.log(err);
-          } else if (res && body) {
-            // Returns blank, exiting for loop if no more requests to be made.
-            if (body.errors) {
-              console.log("There was an error with your request, check below:");
-              console.log(body.errors);
-            } else if (body.meta.next_token) {
-              nextToken = body.meta.next_token;
-            } else {
-              nextToken = "";
+          // Saves the next token for further processing. Returns the response in a JSON format.
+          (err, res, body) => {
+            if (err) {
+              console.log(err);
+            } else if (res && body) {
+              // Error catching, usually an issue when rate limit is reached.
+              if (body.errors || body.meta === undefined) {
+                console.log(body.errors);
+                nextToken = "";
+                var json = JSON.stringify(body); // Resolves JSON early to end loop.
+                resolve(json);
+              } else if (body.meta.next_token) {
+                nextToken = body.meta.next_token;
+              } else {
+                nextToken = "";
+              }
+              var json = JSON.stringify(body);
+              resolve(json);
             }
-            console.log("Token" + nextToken);
-            console.log("err" + err);
-            console.log("res" + res);
-            console.log("body" + body);
-            var json = JSON.stringify(body);
-            resolve(json);
           }
-        }
-      );
+        );
+      }, 65000);
     });
   }
 
   // Redirect to refreshed page.
   setTimeout(() => {
-    res.redirect("/count");
+    res.redirect("/lookup");
   }, 2000);
 });
 

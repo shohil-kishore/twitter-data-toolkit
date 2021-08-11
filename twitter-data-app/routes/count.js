@@ -118,7 +118,7 @@ router.post("/count", (req, res) => {
         granularity: granularity,
         start_time: start,
         end_time: finish,
-        next: nextToken,
+        next_token: nextToken,
       };
     }
 
@@ -141,11 +141,11 @@ router.post("/count", (req, res) => {
             console.log(err);
           } else if (res && body) {
             // Returns blank, exiting for loop if no more requests to be made.
-            if (body.errors) {
-              console.log("There was an error with your request, check below:");
+            if (body.errors || body.meta === undefined) {
               console.log(body.errors);
-            } else if (body.next) {
-              nextToken = body.next;
+              nextToken = "";
+            } else if (body.meta.next_token) {
+              nextToken = body.meta.next_token;
             } else {
               nextToken = "";
             }

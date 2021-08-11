@@ -195,39 +195,41 @@ router.post("/collect", (req, res) => {
 
     // Return request as a Promise (required for async/await). Submission of each request.
     return new Promise(function (resolve, reject) {
-      request(
-        {
-          url: url,
-          qs: queryObject,
-          json: true,
-          headers: {
-            Authorization: bearerToken,
-            "Content-Type": "application/json",
-            "User-Agent": "v2FullArchiveJS",
+      setTimeout(() => {
+        request(
+          {
+            url: url,
+            qs: queryObject,
+            json: true,
+            headers: {
+              Authorization: bearerToken,
+              "Content-Type": "application/json",
+              "User-Agent": "v2FullArchiveJS",
+            },
           },
-        },
-        // Saves the next token for further processing. Returns the response in a JSON format.
-        (err, res, body) => {
-          if (err) {
-            console.log(err);
-          } else if (res && body) {
-            // console.log(body.meta); Check if there are errors with next_token being undefined.
-            // Returns blank, exiting for loop if no more requests to be made.
-            if (body.errors) {
-              console.log("There was an error with your request, check below:");
-              console.log(body.errors);
-            } else if (body.meta.next_token) {
-              nextToken = body.meta.next_token;
-            } else if (body.errors) {
-              console.log(body.errors);
-            } else {
-              nextToken = "";
+          // Saves the next token for further processing. Returns the response in a JSON format.
+          (err, res, body) => {
+            if (err) {
+              console.log(err);
+            } else if (res && body) {
+              // console.log(body.meta); Check if there are errors with next_token being undefined.
+              // Returns blank, exiting for loop if no more requests to be made.
+              if (body.errors || body.meta === undefined) {
+                console.log(body.errors);
+                nextToken = "";
+                var json = JSON.stringify(body); // Resolves JSON early to end loop.
+                resolve(json);
+              } else if (body.meta.next_token) {
+                nextToken = body.meta.next_token;
+              } else {
+                nextToken = "";
+              }
+              var json = JSON.stringify(body);
+              resolve(json);
             }
-            var json = JSON.stringify(body);
-            resolve(json);
           }
-        }
-      );
+        );
+      }, 4000);
     });
   }
 
