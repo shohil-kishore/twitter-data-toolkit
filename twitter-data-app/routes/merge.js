@@ -77,7 +77,6 @@ router.post("/merge", (req, res) => {
         // Append to an existing file. File should be cleared at some stage.
         let writer = fs.createWriteStream("result.json", { flags: "a" });
         writer.write(processedData);
-        i++;
       }
     }
     console.log(
