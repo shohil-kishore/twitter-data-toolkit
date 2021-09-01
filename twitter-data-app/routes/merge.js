@@ -28,10 +28,14 @@ router.post("/merge", (req, res) => {
   function mergeFiles() {
     // Generate array of paths to JSON files to use for processing.
     var dir = "../data/";
+
+    // File arrays.
     var data = [];
     var users = [];
     var extTweets = [];
     var places = [];
+
+    // Creating new arrays for each twitter object (data, users, extended tweets and places).
     fs.readdirSync(dir).forEach((file) => {
       let raw = fs.readFileSync(dir + file);
       let json = JSON.parse(raw);
@@ -50,6 +54,8 @@ router.post("/merge", (req, res) => {
       }
     });
 
+    // For main data object.
+    // Create new write stream, parse relevant data files, add opening/closing brackets, end write stream.
     var writer = fs.createWriteStream("tweets.json", { flags: "a" });
     writer.write("[");
 
@@ -60,7 +66,7 @@ router.post("/merge", (req, res) => {
       if (json.data) {
         // Remove characters that invalidate JSON format.
         let processedData = JSON.stringify(json.data).substr(1).slice(0, -1);
-        // Adds comma or bracket between JSON files to maintain format. 
+        // Adds comma or bracket between JSON files to maintain format.
         if (i === data.length - 1) {
           processedData = processedData + "]";
         } else {
@@ -70,13 +76,13 @@ router.post("/merge", (req, res) => {
         writer.write(processedData);
       }
     }
-    writer.end()
+    writer.end();
 
-
+    // For users object.
+    // Create new write stream, parse relevant data files, add opening/closing brackets, end write stream.
     writer = fs.createWriteStream("users.json", { flags: "a" });
     writer.write("[");
 
-    // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
     for (let i = 0; i < users.length; i++) {
       let raw = fs.readFileSync(users[i]);
       let json = JSON.parse(raw);
@@ -98,10 +104,11 @@ router.post("/merge", (req, res) => {
     }
     writer.end();
 
+    // For extended tweets object.
+    // Create new write stream, parse relevant data files, add opening/closing brackets, end write stream.
     writer = fs.createWriteStream("ext-tweets.json", { flags: "a" });
     writer.write("[");
 
-    // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
     for (let i = 0; i < extTweets.length; i++) {
       let raw = fs.readFileSync(extTweets[i]);
       let json = JSON.parse(raw);
@@ -123,10 +130,11 @@ router.post("/merge", (req, res) => {
     }
     writer.end();
 
+    // For places object.
+    // Create new write stream, parse relevant data files, add opening/closing brackets, end write stream.
     writer = fs.createWriteStream("places.json", { flags: "a" });
     writer.write("[");
 
-    // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
     for (let i = 0; i < places.length; i++) {
       let raw = fs.readFileSync(places[i]);
       let json = JSON.parse(raw);
