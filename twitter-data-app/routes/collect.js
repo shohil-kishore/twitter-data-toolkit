@@ -173,8 +173,8 @@ router.post("/collect", (req, res) => {
         "user.fields": userFields,
         "place.fields": placeFields,
         "media.fields": mediaFields,
-        // expansions:
-        //   "attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id",
+        expansions:
+          "attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id",
         max_results: maxTweets,
         start_time: start,
         end_time: finish,
@@ -187,6 +187,8 @@ router.post("/collect", (req, res) => {
         "user.fields": userFields,
         "place.fields": placeFields,
         "media.fields": mediaFields,
+        expansions:
+          "attachments.media_keys,author_id,entities.mentions.username,geo.place_id,in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id",
         start_time: start,
         end_time: finish,
         next_token: nextToken,
@@ -214,11 +216,16 @@ router.post("/collect", (req, res) => {
             } else if (res && body) {
               // console.log(body.meta); Check if there are errors with next_token being undefined.
               // Returns blank, exiting for loop if no more requests to be made.
-              if (body.errors || body.meta === undefined) {
-                console.log(body.errors);
-                nextToken = "";
-                var json = JSON.stringify(body); // Resolves JSON early to end loop.
-                resolve(json);
+              if ((body.meta === undefined) | (body.data === undefined)) {
+                setTimeout(() => {
+                  console.log(
+                    "Rate limited, waiting 30 seconds before continuing with the same next token... "
+                  );
+                  console.log(body.error);
+                  nextToken = nextToken;
+                  var json = JSON.stringify(body); // Resolves JSON early to end loop.
+                  resolve(json);
+                }, 30000);
               } else if (body.meta.next_token) {
                 nextToken = body.meta.next_token;
               } else {

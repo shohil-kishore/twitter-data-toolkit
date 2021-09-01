@@ -1,4 +1,5 @@
 // Import packages.
+const { json } = require("express");
 const express = require("express");
 const router = express.Router();
 const fs = require("fs-extra");
@@ -10,8 +11,6 @@ router.get("/", (req, res) => {
   // Remove Git files.
   fs.unlink("../data/.gitkeep", (err) => {});
   fs.unlink("../backup-data/.gitkeep", (err) => {});
-  fs.unlink("../data/.DS_Store", (err) => {});
-  fs.unlink("../backup-data/.DS_Store", (err) => {});
   // Redirect to Generate page.
   res.redirect("generate");
 });
@@ -23,64 +22,134 @@ router.get("/merge", (req, res) => {
 
 // Merge POST route.
 router.post("/merge", (req, res) => {
-  mergeAndDeleteFiles();
+  mergeFiles();
 
   // Merge files in the correct format.
-  function mergeAndDeleteFiles() {
+  function mergeFiles() {
     // Generate array of paths to JSON files to use for processing.
-    var files = [];
     var dir = "../data/";
-    var deletedFiles = 0;
+    var data = [];
+    var users = [];
+    var extTweets = [];
+    var places = [];
     fs.readdirSync(dir).forEach((file) => {
-      files.push(dir + file);
-    });
-    // console.log(files);
-    // console.log(files.length);
-
-    // Process each file indivdually. Read, parse into JSON, and iteratively removes all files with errors. Needed to create a new file length.
-    for (let i = 0; i < files.length; i++) {
-      let raw = fs.readFileSync(files[i]);
+      let raw = fs.readFileSync(dir + file);
       let json = JSON.parse(raw);
-      if (json.errors) {
-        deletedFiles++;
-        fs.unlink(files[i], function (err) {
-          if (err) {
-            throw err;
-          }
-        });
-      }
-    }
-    console.log("Deleted a total of " + deletedFiles + " files.");
 
-    // Generate array of cleaned paths to JSON files to use for processing.
-    var newFiles = [];
-    fs.readdirSync(dir).forEach((file) => {
-      newFiles.push(dir + file);
+      if (json.data) {
+        data.push(dir + file);
+      }
+      if (json.includes.users) {
+        users.push(dir + file);
+      }
+      if (json.includes.tweets) {
+        extTweets.push(dir + file);
+      }
+      if (json.includes.places) {
+        places.push(dir + file);
+      }
     });
 
-    // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
-    for (let i = 0; i < newFiles.length; i++) {
-      let raw = fs.readFileSync(newFiles[i]);
+    var writer = fs.createWriteStream("tweets.json", { flags: "a" });
+    writer.write("[");
+
+    for (let i = 0; i < data.length; i++) {
+      let raw = fs.readFileSync(data[i]);
       let json = JSON.parse(raw);
       // Skips files beginning with JSON.error.
       if (json.data) {
         // Remove characters that invalidate JSON format.
         let processedData = JSON.stringify(json.data).substr(1).slice(0, -1);
-        // Add characters that validate JSON format.
-        if (i === 0) {
-          processedData = "[" + processedData + ",";
-          // } else if (i === newFiles.length - 1) {
-          //   processedData = processedData + "]";
+        // Adds comma or bracket between JSON files to maintain format. 
+        if (i === data.length - 1) {
+          processedData = processedData + "]";
         } else {
           processedData = processedData + ",";
         }
         // Append to an existing file. File should be cleared at some stage.
-        let writer = fs.createWriteStream("result.json", { flags: "a" });
         writer.write(processedData);
       }
     }
+    writer.end()
+
+
+    writer = fs.createWriteStream("users.json", { flags: "a" });
+    writer.write("[");
+
+    // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
+    for (let i = 0; i < users.length; i++) {
+      let raw = fs.readFileSync(users[i]);
+      let json = JSON.parse(raw);
+      // Skips files beginning with JSON.error.
+      if (json.includes.users) {
+        // Remove characters that invalidate JSON format.
+        let processedData = JSON.stringify(json.includes.users)
+          .substr(1)
+          .slice(0, -1);
+        // Add characters that validate JSON format.
+        if (i === users.length - 1) {
+          processedData = processedData + "]";
+        } else {
+          processedData = processedData + ",";
+        }
+        // Append to an existing file. File should be cleared at some stage.
+        writer.write(processedData);
+      }
+    }
+    writer.end();
+
+    writer = fs.createWriteStream("ext-tweets.json", { flags: "a" });
+    writer.write("[");
+
+    // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
+    for (let i = 0; i < extTweets.length; i++) {
+      let raw = fs.readFileSync(extTweets[i]);
+      let json = JSON.parse(raw);
+      // Skips files beginning with JSON.error.
+      if (json.includes.tweets) {
+        // Remove characters that invalidate JSON format.
+        let processedData = JSON.stringify(json.includes.tweets)
+          .substr(1)
+          .slice(0, -1);
+        // Add characters that validate JSON format.
+        if (i === extTweets.length - 1) {
+          processedData = processedData + "]";
+        } else {
+          processedData = processedData + ",";
+        }
+        // Append to an existing file. File should be cleared at some stage.
+        writer.write(processedData);
+      }
+    }
+    writer.end();
+
+    writer = fs.createWriteStream("places.json", { flags: "a" });
+    writer.write("[");
+
+    // Process each file indivdually. Read, parse into JSON, remove irrelevant characters and append to a file in the correct format.
+    for (let i = 0; i < places.length; i++) {
+      let raw = fs.readFileSync(places[i]);
+      let json = JSON.parse(raw);
+      // Skips files beginning with JSON.error.
+      if (json.includes.places) {
+        // Remove characters that invalidate JSON format.
+        let processedData = JSON.stringify(json.includes.places)
+          .substr(1)
+          .slice(0, -1);
+        // Add characters that validate JSON format.
+        if (i === places.length - 1) {
+          processedData = processedData + "]";
+        } else {
+          processedData = processedData + ",";
+        }
+        // Append to an existing file. File should be cleared at some stage.
+        writer.write(processedData);
+      }
+    }
+    writer.end();
+
     console.log(
-      "Data merged successfully. Safely store 'result.json' before clearing data."
+      "Data merged successfully. Safely store JSON files before clearing data."
     );
     res.render("merge");
   }
