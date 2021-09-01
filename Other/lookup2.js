@@ -1,3 +1,5 @@
+// In testing, use if user information (such as profile, network, etc) is required.
+
 // Import packages.
 const express = require("express");
 const router = express.Router();

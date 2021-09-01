@@ -1,3 +1,6 @@
+// Obtains a detailed list of the people an individual is following.
+// If interested in obtaining user information (such as username, network, profile location, etc) see lookup2).
+
 // Import packages.
 const express = require("express");
 const router = express.Router();
