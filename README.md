@@ -1,6 +1,6 @@
 # Twitter Data Toolkit
 
-Twitter Data Toolkit is a Node.js project that allows users to identify their bearer token collect Tweets using Twitter's new v2 endpoints and aggregate Tweets into four JSON files (Tweets, Extended Tweets, Users and Places) without having to interact with code. Everything's done through a simple web application. Feel free to email me (<s.kishore@auckland.ac.nz>) if you need more information.
+Twitter Data Toolkit is a Node.js project that allows users to collect Tweets using Twitter's new v2 endpoints and aggregate Tweets into four JSON files (Tweets, Extended Tweets, Users and Places) without having to interact with code. Everything's done through a simple web application. Feel free to email me (<s.kishore@auckland.ac.nz>) if you need more information.
 
 ![Screenshot](https://raw.githubusercontent.com/shohil-kishore/twitter-data-collector/master/Other/Data%20Toolkit%20Example.png)
 
