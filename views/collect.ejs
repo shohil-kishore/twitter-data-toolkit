@@ -1,0 +1,68 @@
+<%- include ("./partials/header.ejs") %>
+
+  <body>
+    <div class="container">
+
+      <div style="padding: 40px;" class="display-4 text-center">
+        Twitter Data Collector
+      </div>
+
+      <form action="/collect" method="POST">
+        <div class="form-group">
+          <label for="publicKey">Token</label>
+          <input type="text" class="form-control" name="token" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter your bearer token. <a href="https://developer.twitter.com/en/portal/projects-and-apps">The token can be generated here.</a></small>
+        </div>
+        <div class="form-group">
+          <label for="publicKey">Start Date</label>
+          <input type="text" class="form-control" name="start" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter date/time using the UTC time zone format. For example, 2018-07-21T00:00:00Z is 12am on the 21st of July, 2018 UTC. <a href="https://developer.twitter.com/en/docs/twitter-ads-api/timezones">More information can be found here.</a></small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">End Date</label>
+          <input type="text" class="form-control" name="finish" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter date/time using the UTC time zone format above.</small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Endpoint</label>
+          <input type="text" class="form-control" name="endpoint"  value="https://api.twitter.com/2/tweets/search/all" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter the relevant endpoint. The auto-filled endpoint above is only available for <a href="https://developer.twitter.com/en/docs/projects/overview#product-track">approved academic research projects.</a></small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Max Tweets</label>
+          <input type="text" class="form-control" name="maxTweets" value="500"/>
+          <small id="publicKeyHelp" class="form-text text-muted">Enter the total amount of Tweets to be returned per request. <a href="https://developer.twitter.com/en/docs/twitter-api/tweets/search/api-reference/get-tweets-search-all">500 is the maximum value when using the auto-filled endpoint.</a></small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Max Requests</label>
+          <input type="text" class="form-control" name="maxRequests" value="10"/>
+          <small id="publicKeyHelp" class="form-text text-muted">As a fail-safe, enter an upper limit for how many requests are made. Although 10 million tweets is a large monthly limit, that could be consumed within 24 hours of continuous data collection. We recommend limiting exploratory searches to 100 requests (i.e. a maximum of 50,000 Tweets using the auto-filled endpoint).</small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Query</label>
+          <input type="text" class="form-control" name="query" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter a query utilising <a href="https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query">appropriate operators.</a> For example, #Trump.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="privateKey">Fields and Expansions</label>
+          <select multiple class="form-control active" name="fields">
+            <option value="tweet" selected>Tweet</option>
+            <option value="user"selected>User</option>
+            <option value="place" selected>Place</option>
+            <option value="media" selected>Media</option>
+            <option value="expansions" selected>Expansions</option>
+          </select>
+          <small id="publicKeyHelp" class="form-text text-muted"> <a href="https://developer.twitter.com/en/docs/twitter-api/fields">Fields</a> and <a href="https://developer.twitter.com/en/docs/twitter-api/expansions">Expansions</a> allow you to select just the data you want. We recommend selecting all the above options so you can decide what is relevant and irrelevant during cleaning and analysis.</small>
+        </div>
+
+        <input
+          class="btn btn-primary"
+          type="submit"
+          name="submit"
+          value="Submit"
+        />      
+      </form>
+    </div>
+  </body>
+</html>

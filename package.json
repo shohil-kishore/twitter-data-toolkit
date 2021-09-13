@@ -10,12 +10,13 @@
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "fs-extra": "^8.0.1",
+    "fs-extra": "^10.0.0",
     "json-concat": "0.0.1",
-    "json-merger": "^1.1.0",
+    "json-merger": "^1.1.6",
+    "junk": "^4.0.0",
     "method-override": "^3.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"

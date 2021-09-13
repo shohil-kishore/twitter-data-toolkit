@@ -9,54 +9,44 @@ var token;
 var start;
 var finish;
 var endpoint;
-var maxTweets;
+var granularity;
 var maxRequests;
 var query;
 var nextToken;
-// var successMessage;
 
 // Pass through variables to GET route.
-router.get("/collect", (req, res) => {
-  res.render("collect", {
+router.get("/count", (req, res) => {
+  res.render("count", {
     token: token,
     start: start,
     finish: finish,
     endpoint: endpoint,
     maxRequests: maxRequests,
-    maxTweets: maxTweets,
+    granularity: granularity,
     query: query,
-    // successMessage: successMessage
   });
 });
 
 // Extract form data from POST route.
-router.post("/collect", (req, res) => {
+router.post("/count", (req, res) => {
   token = req.body.token;
   start = req.body.start;
   finish = req.body.finish;
   endpoint = req.body.endpoint;
-  maxTweets = req.body.maxTweets;
+  granularity = req.body.granularity;
   maxRequests = req.body.maxRequests;
   query = req.body.query;
 
-  // Call data collection function.
-  collectAndSaveData(
-    token,
-    start,
-    finish,
-    endpoint,
-    maxTweets,
-    query,
-    maxRequests
-  );
+  // Call count function.
+  countAndSave(token, start, finish, endpoint, granularity, query, maxRequests);
 
   // Async function awaits for each response from the Twitter API. Makes multiple requests based on a user-defined limit (maxRequests). Generates a JSON file containing each response.
-  async function collectAndSaveData(
+  async function countAndSave(
     token,
     start,
     finish,
     endpoint,
-    maxTweets,
+    granularity,
     query,
     maxRequests
   ) {
@@ -67,22 +57,12 @@ router.post("/collect", (req, res) => {
         start,
         finish,
         endpoint,
-        maxTweets,
+        granularity,
         query
       );
       // Writes JSON response to file, both data and backup directory.
       fs.writeFile(
-        "../data/response-" + (index + 1) + "-" + start + ".json",
-        json,
-        "utf8",
-        (err) => {
-          if (err) {
-            console.log(err);
-          }
-        }
-      );
-      fs.writeFile(
-        "../backup-data/response-" + (index + 1) + "-" + start + ".json",
+        "./data/count-" + (index + 1) + "-" + start + ".json",
         json,
         "utf8",
         (err) => {
@@ -96,18 +76,18 @@ router.post("/collect", (req, res) => {
         // successMessage =
         //   "Success! Data collection is complete. You can now proceed to merging the data.";
         console.log(
-          "Data collection complete. Data did not exceed request limitations."
+          "Success! Data collection did not exceed request limitations."
         );
         return;
       }
     }
     console.log(
-      "Data collection complete, however, data exceeded request limitations."
+      "Error, data collection incomplete. If there was an error, it is logged below. If nothing is logged, data collection exceeded request limitations."
     );
   }
 
   // Compiles and sends the request as a Promise.
-  function generateRequest(token, start, finish, endpoint, maxTweets, query) {
+  function generateRequest(token, start, finish, endpoint, granularity, query) {
     // Setup variables.
     const url = endpoint + "?";
     const completedQuery = "(" + query + ")";
@@ -118,17 +98,17 @@ router.post("/collect", (req, res) => {
     if (!nextToken) {
       queryObject = {
         query: completedQuery,
-        maxResults: maxTweets,
-        fromDate: start,
-        toDate: finish,
+        granularity: granularity,
+        start_time: start,
+        end_time: finish,
       };
     } else if (nextToken) {
       queryObject = {
         query: completedQuery,
-        maxResults: maxTweets,
-        fromDate: start,
-        toDate: finish,
-        next: nextToken,
+        granularity: granularity,
+        start_time: start,
+        end_time: finish,
+        next_token: nextToken,
       };
     }
 
@@ -142,6 +122,7 @@ router.post("/collect", (req, res) => {
           headers: {
             Authorization: bearerToken,
             "Content-Type": "application/json",
+            "User-Agent": "v2FullArchiveJS",
           },
         },
         // Saves the next token for further processing. Returns the response in a JSON format.
@@ -150,8 +131,18 @@ router.post("/collect", (req, res) => {
             console.log(err);
           } else if (res && body) {
             // Returns blank, exiting for loop if no more requests to be made.
-            if (body.next) {
-              nextToken = body.next;
+            if (body.errors || body.meta === undefined) {
+              setTimeout(() => {
+                console.log(
+                  "Rate limited, waiting 10 seconds before trying again... "
+                );
+                console.log(body.error);
+                nextToken = nextToken;
+                var json = JSON.stringify(body); // Resolves JSON early to end loop.
+                resolve(json);
+              }, 10000);
+            } else if (body.meta.next_token) {
+              nextToken = body.meta.next_token;
             } else {
               nextToken = "";
             }
@@ -165,7 +156,7 @@ router.post("/collect", (req, res) => {
 
   // Redirect to refreshed page.
   setTimeout(() => {
-    res.redirect("/collect");
+    res.redirect("/count");
   }, 2000);
 });
 
