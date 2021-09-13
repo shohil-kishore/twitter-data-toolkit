@@ -10,9 +10,8 @@ router.use(methodOverride("_method"));
 router.get("/", (req, res) => {
   // Remove Git files.
   fs.unlink("../data/.gitkeep", (err) => {});
-  fs.unlink("../backup-data/.gitkeep", (err) => {});
   // Redirect to Generate page.
-  res.redirect("generate");
+  res.redirect("count");
 });
 
 // Merge GET route.
@@ -27,7 +26,7 @@ router.post("/merge", (req, res) => {
   // Merge files in the correct format.
   function mergeFiles() {
     // Generate array of paths to JSON files to use for processing.
-    var dir = "../data/";
+    var dir = "./data/";
 
     // File arrays.
     var data = [];
@@ -161,17 +160,6 @@ router.post("/merge", (req, res) => {
     );
     res.render("merge");
   }
-});
-
-router.delete("/merge", (req, res) => {
-  // Clears results.json file and empties data directory.
-  fs.writeFile("result.json", "", () => {
-    fs.emptyDir("../data/");
-    console.log(
-      "Merged data file cleared and data directory emptied successfully. Data is still available in the 'backup-data' directory."
-    );
-  });
-  res.redirect("/merge");
 });
 
 // Export to App.

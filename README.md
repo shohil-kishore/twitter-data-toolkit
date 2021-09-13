@@ -1,6 +1,6 @@
 # Twitter Data Toolkit
 
-'twitter-data-app' is a Node.js project that allows users to identify their bearer token (application-only authentication), collect Tweets using Twitter's v2 endpoints and aggregate Tweets into one file (JSON or CSV) for analysis purposes without having to interact with code. Everything's done through a simple web application. Feel free to email me (<s.kishore@auckland.ac.nz>) if you need more information.
+Twitter Data Toolkit is a Node.js project that allows users to identify their bearer token collect Tweets using Twitter's new v2 endpoints and aggregate Tweets into four JSON files (Tweets, Extended Tweets, Users and Places) without having to interact with code. Everything's done through a simple web application. Feel free to email me (<s.kishore@auckland.ac.nz>) if you need more information.
 
 ![Screenshot](https://raw.githubusercontent.com/shohil-kishore/twitter-data-collector/master/Other/Data%20Toolkit%20Example.png)
 
@@ -14,9 +14,8 @@ If you use this software, please reference: [Kishore, S., Peko, G., & Sundaram, 
 2. On approval, create an app under "Apps" (https://developer.twitter.com/en/docs/projects/overview).
 3. Download and install Node.js (https://nodejs.org/en/download/).
 4. If you have a GitHub account, clone or fork this project. If you don't have a GitHub account, click the green "Clone or download" button on the top-right and download the ZIP file.
-5. From the command line, change directory into "twitter-data-toolkit" and type "git checkout v2-api" to use the latest version of the toolkit.
-6. Then, change directory into "twitter-data-app", type "npm install" to install dependencies, and "npm start" to start the application.
-7. Finally, in a web browser, type in "localhost:8080" to access the web application and start collecting data! 🎉
+5. From the command line, change directory into "twitter-data-toolkit", type "npm install" to install dependencies, and "npm start" to start the application.
+6. Finally, in a web browser, type in "https://localhost:8080" to access the web application and start collecting data! 🎉
 
 # FAQ
 

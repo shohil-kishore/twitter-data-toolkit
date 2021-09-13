@@ -76,17 +76,7 @@ router.post("/collect", (req, res) => {
       );
       // Writes JSON response to file, both data and backup directory.
       fs.writeFile(
-        "../data/res-" + (index + 1) + "-" + start + ".json",
-        json,
-        "utf8",
-        (err) => {
-          if (err) {
-            console.log(err);
-          }
-        }
-      );
-      fs.writeFile(
-        "../backup-data/res-" + (index + 1) + "-" + start + ".json",
+        "./data/res-" + (index + 1) + "-" + start + ".json",
         json,
         "utf8",
         (err) => {
@@ -100,13 +90,13 @@ router.post("/collect", (req, res) => {
         // successMessage =
         //   "Success! Data collection is complete. You can now proceed to merging the data.";
         console.log(
-          "Success! Data collection complete. Data did not exceed request limitations."
+          "Success! Data collection did not exceed request limitations."
         );
         return;
       }
     }
     console.log(
-      "Error: Data collection incomplete. If there was an error, it will be logged below. If nothing is logged, data exceeded request limitations."
+      "Error, data collection incomplete. If there was an error, it is logged below. If nothing is logged, data collection exceeded request limitations."
     );
   }
 
@@ -219,13 +209,13 @@ router.post("/collect", (req, res) => {
               if ((body.meta === undefined) | (body.data === undefined)) {
                 setTimeout(() => {
                   console.log(
-                    "Rate limited, waiting 30 seconds before continuing with the same next token... "
+                    "Rate limited, waiting 10 seconds before trying again... "
                   );
                   console.log(body.error);
                   nextToken = nextToken;
                   var json = JSON.stringify(body); // Resolves JSON early to end loop.
                   resolve(json);
-                }, 30000);
+                }, 10000);
               } else if (body.meta.next_token) {
                 nextToken = body.meta.next_token;
               } else {

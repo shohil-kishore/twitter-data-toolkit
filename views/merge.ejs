@@ -1,0 +1,37 @@
+<%- include ("./partials/header.ejs") %>
+<html>
+  <body>
+    <div class="container">
+      <div style="padding: 40px" class="display-4 text-center">
+        Twitter Data Merger
+      </div>
+      <div class="text-justify">
+        <p>
+          Once data collection is complete, click the "Merge Data" button. On
+          completion, your project folder will contain four JSON files which
+          have merged the data into the
+          <a href="https://developer.twitter.com/en/docs/twitter-api/fields"
+            >appropriate Fields</a
+          >. This includes tweets (tweets.json), extended tweet information
+          (ext-tweets.json) user information (users.json), and location
+          information (places.json).
+        </p>
+        <div class="text-center">
+          <p>
+            Warning: Merging will take some time, only click the button once.
+          </p>
+        </div>
+      </div>
+      <div style="width: 50%; margin: auto">
+        <form action="/merge" method="POST" class="text-center">
+          <input
+            class="btn text-center btn-primary"
+            type="submit"
+            name="submit"
+            value="Merge Data"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

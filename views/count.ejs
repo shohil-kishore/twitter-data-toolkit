@@ -1,0 +1,55 @@
+<%- include ("./partials/header.ejs") %>
+
+  <body>
+    <div class="container">
+
+      <div style="padding: 40px;" class="display-4 text-center">
+        Twitter Count Collector
+      </div>
+
+      <form action="/count" method="POST">
+        <div class="form-group">
+          <label for="publicKey">Token</label>
+          <input type="text" class="form-control" name="token" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter your bearer token. <a href="https://developer.twitter.com/en/portal/projects-and-apps">The token can be generated here.</a></small>
+        </div>
+        <div class="form-group">
+          <label for="publicKey">Start Date</label>
+          <input type="text" class="form-control" name="start" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter date/time using the UTC time zone format. For example, 2018-07-21T00:00:00Z is 12am on the 21st of July, 2018 UTC. <a href="https://developer.twitter.com/en/docs/twitter-ads-api/timezones">More information can be found here.</a></small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">End Date</label>
+          <input type="text" class="form-control" name="finish" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter date/time using the UTC time zone format above.</small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Endpoint</label>
+          <input type="text" class="form-control" name="endpoint"  value="https://api.twitter.com/2/tweets/counts/all" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter the relevant endpoint. The auto-filled endpoint above is only available for <a href="https://developer.twitter.com/en/docs/projects/overview#product-track">approved academic research projects.</a></small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Granularity</label>
+          <input type="text" class="form-control" name="granularity" value="day"/>
+          <small id="publicKeyHelp" class="form-text text-muted">Enter a unit of time such as "day", "hour" or "minute" for the result to be sub-divided by.</small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Max Requests</label>
+          <input type="text" class="form-control" name="maxRequests" value="12"/>
+          <small id="publicKeyHelp" class="form-text text-muted">As a fail-safe, enter an upper limit for how many requests are made. For example, if granularity is by day and 12 months worth of estimates is required, 12 requests would suffice.</small>
+        </div>
+        <div class="form-group">
+          <label for="privateKey">Query</label>
+          <input type="text" class="form-control" name="query" />
+          <small id="publicKeyHelp" class="form-text text-muted">Enter a query utilising <a href="https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query">appropriate operators.</a> For example, #Trump.</small>
+        </div>
+        <input
+          class="btn btn-primary"
+          type="submit"
+          name="submit"
+          value="Submit"
+        />      
+      </form>
+    </div>
+  </body>
+</html>
