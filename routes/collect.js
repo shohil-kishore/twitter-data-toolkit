@@ -76,7 +76,7 @@ router.post("/collect", (req, res) => {
       );
       // Writes JSON response to file, both data and backup directory.
       fs.writeFile(
-        "./data/res-" + (index + 1) + "-" + start + ".json",
+        "./data/res-" + (index + 1) + ".json",
         json,
         "utf8",
         (err) => {

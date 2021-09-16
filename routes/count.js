@@ -62,7 +62,7 @@ router.post("/count", (req, res) => {
       );
       // Writes JSON response to file, both data and backup directory.
       fs.writeFile(
-        "./data/count-" + (index + 1) + "-" + start + ".json",
+        "./data/count-" + (index + 1) + ".json",
         json,
         "utf8",
         (err) => {
