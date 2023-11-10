@@ -25,8 +25,8 @@ This project focuses on those with a non-technical background. When you simply w
 
 ## Why should I use the Twitter API?
 
-Twitter recently introduced the Academic Research product track. The API's available through this track are particularly useful in a research context as they allow you to collect full-fidelity data that can be replicated by others.
+Twitter recently introduced the Academic Research product track. The API's available through this track are particularly useful in a research context as they allow you to collect full-fidelity data that others can replicate. Note that the Academic Research product track is currently closed. It now costs $100 USD per 10,000-50,000 tweets. 
 
 ## How much does it cost to use the Twitter API?
 
-Nothing. Once a research project is approved, user's can collect up to 10,000,000 Tweets per month.
+Nothing. Once a research project is approved, user's can collect up to 10,000,000 Tweets per month. Note that the Academic Research product track is currently closed. It now costs $100 USD per 10,000-50,000 tweets. 
